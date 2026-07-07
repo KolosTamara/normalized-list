@@ -1,11 +1,15 @@
-import React from 'react';
-import {Meta, StoryFn} from '@storybook/react';
-import {Component, ComponentProps} from '..';
+import type {Meta, StoryObj} from '@storybook/react-webpack5';
+
+import {Component} from '..';
+import type {ComponentProps} from '..';
 
 export default {
     title: 'Component',
     component: Component,
-} as Meta;
+} satisfies Meta<typeof Component>;
 
-export const Playground: StoryFn<ComponentProps> = (args) => <Component {...args} />;
-Playground.storyName = 'Component';
+type Story = StoryObj<ComponentProps>;
+
+export const Playground: Story = {
+    name: 'Component',
+};
