@@ -7,6 +7,9 @@ export default defineConfig([
     ...baseConfig,
     ...prettierConfig,
     {
+        ignores: ['build', 'storybook-static'],
+    },
+    {
         files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
         languageOptions: {
             globals: {
