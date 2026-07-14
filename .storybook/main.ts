@@ -2,7 +2,10 @@ import type {StorybookConfig} from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
     framework: '@storybook/react-webpack5',
-    stories: ['../src/**/*.stories.@(ts|tsx)'],
+    stories: [
+        '../src/components/TreeList/__stories__/TreeList.stories.tsx',
+        '../src/components/Component/__stories__/*.stories.tsx',
+    ],
     addons: [
         {
             name: '@storybook/addon-styling-webpack',
