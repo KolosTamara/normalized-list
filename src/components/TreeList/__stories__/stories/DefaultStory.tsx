@@ -1,24 +1,37 @@
 import * as React from 'react';
 
-import {Flex, Text} from '@gravity-ui/uikit';
 import {useList} from '../../../useList';
+import './DefaultStory.scss';
 import {createRandomizedData} from '../../../useList/__stories__/utils/makeData';
 import {TreeList} from '../../TreeList';
 import type {TreeListProps} from '../../types';
 
-function identity<T>(value: T): T {
-    return value;
-}
+type TreeItemData = {
+    name: string;
+};
+
+const mapTreeItemToContentProps: TreeListProps<TreeItemData>['mapItemDataToContentProps'] = (
+    item,
+) => ({
+    title: item.name,
+});
 
 export interface DefaultStoryProps extends Omit<
-    TreeListProps<{title: string}>,
+    TreeListProps<TreeItemData>,
     'items' | 'mapItemDataToContentProps'
 > {
     itemsCount?: number;
 }
 
 export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
-    const items = React.useMemo(() => createRandomizedData({num: itemsCount}), [itemsCount]);
+    const items = React.useMemo(
+        () =>
+            createRandomizedData<TreeItemData>({
+                num: itemsCount,
+                getData: (name) => ({name}),
+            }),
+        [itemsCount],
+    );
 
     const listWithGroups = useList({items});
 
@@ -28,28 +41,27 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
     });
 
     return (
-        <Flex gap="5">
-            <Flex direction={'column'} gap="3">
-                <Text color="secondary">Default TreeList</Text>
+        <div className="tree-list-default-story">
+            <div className="tree-list-default-story__column">
+                <span className="tree-list-default-story__label">Default TreeList</span>
                 <TreeList
                     {...props}
                     list={listWithGroups}
-                    onItemClick={null}
-                    mapItemDataToContentProps={identity}
+                    mapItemDataToContentProps={mapTreeItemToContentProps}
                 />
-            </Flex>
-            <Flex direction={'column'} gap="3">
-                <Text color="secondary">
+            </div>
+            <div className="tree-list-default-story__column">
+                <span className="tree-list-default-story__label">
                     List with `withExpandedState` false option in list state
-                </Text>
+                </span>
 
                 <TreeList
                     {...props}
                     list={listWithNoGroups}
                     onItemClick={null}
-                    mapItemDataToContentProps={identity}
+                    mapItemDataToContentProps={mapTreeItemToContentProps}
                 />
-            </Flex>
-        </Flex>
+            </div>
+        </div>
     );
 };

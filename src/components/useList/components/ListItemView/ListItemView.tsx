@@ -1,11 +1,10 @@
 import * as React from 'react';
 
-import {spacing} from '@gravity-ui/uikit';
 import type {QAProps} from '../../../types';
 import {LIST_ITEM_DATA_ATR, modToHeight} from '../../constants';
 import type {ListItemId, ListItemSize, ListItemViewContentType} from '../../types';
 
-import {ListItemViewContent, isListItemContentPropsGuard} from './ListItemViewContent';
+import {ListItemViewContent, isListItemContentPropsGuard} from '../ListItemViewContent';
 import {b} from './styles';
 
 export interface ListItemViewCommonProps<T extends React.ElementType = 'li'> extends QAProps {
@@ -85,12 +84,12 @@ export const ListItemView = React.forwardRef(function ListItemView<
     const activeOnHover =
         typeof propsActiveOnHover === 'boolean' ? propsActiveOnHover : Boolean(onClick);
     const style = {
-        minHeight: `var(--g-list-item-height, ${
+        minHeight: `${
             height ??
             modToHeight[size][
                 Number(Boolean(isListItemContentPropsGuard(content) ? content?.subtitle : false))
             ]
-        }px)`,
+        }px`,
         ...propsStyle,
     };
 
@@ -110,7 +109,7 @@ export const ListItemView = React.forwardRef(function ListItemView<
                     dragging,
                     clickable: Boolean(onClick),
                 },
-                spacing({px: 2}, className),
+                className,
             )}
             style={style}
             ref={ref}

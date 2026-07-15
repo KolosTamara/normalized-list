@@ -1,18 +1,13 @@
-import type * as React from 'react';
-
 import {Check} from '@gravity-ui/icons';
 import {Flex, Icon, Text, colorText} from '@gravity-ui/uikit';
 import type {FlexProps} from '@gravity-ui/uikit';
-import type {ListItemViewContentType} from '../../types';
-import {ListItemExpandIcon} from '../ListItemExpandIcon/ListItemExpandIcon';
 
-import {b} from './styles';
+import {block} from '../../../utils/cn';
+import type {ListItemViewContentType} from '../../../useList/types';
 
-export const isListItemContentPropsGuard = (
-    props: ListItemViewContentType | React.ReactNode,
-): props is ListItemViewContentType => {
-    return typeof props === 'object' && props !== null && 'title' in props;
-};
+import {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
+
+const b = block('list-item-view-content');
 
 interface SlotProps extends FlexProps {
     indentation?: number;
@@ -35,16 +30,13 @@ const renderSafeIndentation = (indentation?: number) => {
     return null;
 };
 
-interface ListItemViewContentProps extends ListItemViewContentType {
+interface UIKitListItemViewContentProps extends ListItemViewContentType {
     selected?: boolean;
     disabled?: boolean;
-    /**
-     * Show selected icon if selected and reserve space for this icon
-     */
     hasSelectionIcon: boolean;
 }
 
-export const ListItemViewContent = ({
+export const UIKitListItemViewContent = ({
     startSlot,
     subtitle,
     endSlot,
@@ -56,8 +48,8 @@ export const ListItemViewContent = ({
     selected,
     title,
     expandIconPlacement = 'start',
-    renderExpandIcon: RenderExpandIcon = ListItemExpandIcon,
-}: ListItemViewContentProps) => {
+    renderExpandIcon: RenderExpandIcon = UIKitListItemExpandIcon,
+}: UIKitListItemViewContentProps) => {
     const expandIconNode = isGroup ? (
         <RenderExpandIcon
             behavior={expandIconPlacement === 'start' ? 'state' : 'action'}
@@ -67,11 +59,10 @@ export const ListItemViewContent = ({
     ) : null;
 
     return (
-        <Flex alignItems="center" justifyContent="space-between" gap="4" className={b('content')}>
-            <Flex gap="2" alignItems="center" grow>
+        <Flex alignItems="center" justifyContent="space-between" gap={4} className={b()}>
+            <Flex gap={2} alignItems="center" grow>
                 {hasSelectionIcon && (
-                    <ListItemViewSlot // reserve space
-                    >
+                    <ListItemViewSlot>
                         {selected ? (
                             <Icon data={Check} size={16} className={colorText({color: 'info'})} />
                         ) : null}
@@ -84,7 +75,7 @@ export const ListItemViewContent = ({
 
                 {startSlot}
 
-                <div className={b('main-content')}>
+                <div className={b('main')}>
                     {typeof title === 'string' ? (
                         <Text
                             ellipsis
@@ -106,7 +97,7 @@ export const ListItemViewContent = ({
                 </div>
             </Flex>
 
-            <Flex gap="2">
+            <Flex gap={2}>
                 {expandIconPlacement === 'end' && expandIconNode}
                 {endSlot}
             </Flex>
