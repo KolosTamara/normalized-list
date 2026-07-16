@@ -1,10 +1,7 @@
 import {ArrowToggle, colorText} from '@gravity-ui/uikit';
 import type {ArrowToggleProps} from '@gravity-ui/uikit';
 
-import {block} from '../../../utils/cn';
-import type {ListItemExpandIconRenderProps} from '../../../useList/types';
-
-const b = block('list-item-expand-icon');
+import type {ListItemExpandIconRenderProps} from '../../../useList';
 
 export interface UIKitListItemExpandIconProps extends ListItemExpandIconRenderProps {}
 
@@ -16,7 +13,7 @@ export const UIKitListItemExpandIcon = ({
     return (
         <ArrowToggle
             direction={getIconDirection({behavior, expanded})}
-            className={b(null, colorText({color: disabled ? 'hint' : undefined}))}
+            className={colorText({color: disabled ? 'hint' : undefined})}
             size={16}
         />
     );

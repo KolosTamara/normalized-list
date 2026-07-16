@@ -2,20 +2,17 @@ import {Check} from '@gravity-ui/icons';
 import {Flex, Icon, Text, colorText} from '@gravity-ui/uikit';
 import type {FlexProps} from '@gravity-ui/uikit';
 
-import {block} from '../../../utils/cn';
-import type {ListItemViewContentType} from '../../../useList/types';
+import type {ListItemViewContentType} from '../../../useList';
 
 import {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
-
-const b = block('list-item-view-content');
 
 interface SlotProps extends FlexProps {
     indentation?: number;
 }
 
-const ListItemViewSlot = ({children, indentation = 1, className, ...props}: SlotProps) => {
+const ListItemViewSlot = ({children, indentation = 1, ...props}: SlotProps) => {
     return (
-        <Flex width={indentation * 16} className={b('slot', className)} {...props}>
+        <Flex width={indentation * 16} shrink={0} {...props}>
             {children}
         </Flex>
     );
@@ -59,8 +56,8 @@ export const UIKitListItemViewContent = ({
     ) : null;
 
     return (
-        <Flex alignItems="center" justifyContent="space-between" gap={4} className={b()}>
-            <Flex gap={2} alignItems="center" grow>
+        <Flex alignItems="center" justifyContent="space-between" gap={4} width="100%" height="100%">
+            <Flex gap={2} alignItems="center" grow style={{minWidth: 0}}>
                 {hasSelectionIcon && (
                     <ListItemViewSlot>
                         {selected ? (
@@ -75,7 +72,7 @@ export const UIKitListItemViewContent = ({
 
                 {startSlot}
 
-                <div className={b('main')}>
+                <Flex direction="column" grow style={{minWidth: 0, gap: 2}}>
                     {typeof title === 'string' ? (
                         <Text
                             ellipsis
@@ -94,10 +91,10 @@ export const UIKitListItemViewContent = ({
                     ) : (
                         subtitle
                     )}
-                </div>
+                </Flex>
             </Flex>
 
-            <Flex gap={2}>
+            <Flex gap={2} shrink={0}>
                 {expandIconPlacement === 'end' && expandIconNode}
                 {endSlot}
             </Flex>

@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import {useLayoutEffect} from '../../../hooks';
 import type {ListOnItemClick, UseListResult} from '../types';
 import {findNextIndex} from '../utils/findNextIndex';
 import {scrollToListItem} from '../utils/scrollToListItem';
 import {KeyCode} from '../../../constants';
+import {useLayoutEffect} from '../../../hooks';
 
 interface UseListKeydownProps<T = unknown> {
     onItemClick?: ListOnItemClick;

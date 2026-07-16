@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-import {Flex, Text, spacing} from '@gravity-ui/uikit';
+import {Flex, Text} from '@gravity-ui/uikit';
 
 import {ListItemView, useList} from '../../../../useList';
-import {b} from '../../../../useList/components/ListItemView/styles';
 import {createRandomizedData} from '../../../../useList/__stories__/utils/makeData';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
@@ -59,7 +58,7 @@ export const UIKitRecipeStory = ({itemsCount = 5, ...props}: UIKitRecipeStoryPro
                 selected={selected}
                 disabled={disabled}
                 selectionViewType={selectionViewType}
-                className={b({theme: 'uikit'}, spacing({px: 2}))}
+                className={'g-list-item-view_theme-uikit'}
                 content={
                     <UIKitListItemViewContent
                         {...content}

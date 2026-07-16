@@ -1,9 +1,7 @@
-@use '../../../../variables';
-
-$block: '.#{variables.$ns}list-item-view';
-
-#{$block}_theme-uikit {
+.g-list-item-view_theme-uikit {
     --g-list-item-background-hover: var(--g-color-base-simple-hover);
     --g-list-item-background-selected: var(--g-color-base-selection);
     --g-list-item-background-dragging: var(--g-color-base-simple-hover-solid);
+
+    padding-inline: var(--g-spacing-2);
 }
