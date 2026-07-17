@@ -1,10 +1,9 @@
 import * as React from 'react';
 
-import {useList} from '../../../useList';
+import {useList} from '../../../../useList';
 import './DefaultStory.scss';
-import {createRandomizedData} from '../../../useList/__stories__/utils/makeData';
-import {TreeList} from '../../TreeList';
-import type {TreeListProps} from '../../types';
+import {createRandomizedData} from '../../../../useList/__stories__/utils/makeData';
+import {TreeList, TreeListProps} from '../../../../TreeList';
 
 type TreeItemData = {
     name: string;

@@ -2,14 +2,13 @@ import * as React from 'react';
 
 import {Flex, Text} from '@gravity-ui/uikit';
 
-import {ListItemView, useList} from '../../../../useList';
+import {useList} from '../../../../useList';
 import {createRandomizedData} from '../../../../useList/__stories__/utils/makeData';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
 import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../recipes/UIKitListItemView';
 import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
-
-import './UIKitRecipeStory.scss';
 
 type TreeItemData = {
     name: string;
@@ -52,13 +51,12 @@ export const UIKitRecipeStory = ({itemsCount = 5, ...props}: UIKitRecipeStoryPro
         const {content, selectionViewType, selected, disabled, ...shellProps} = itemProps;
 
         return (
-            <ListItemView
+            <UIKitListItemView
                 {...shellProps}
                 {...renderContainerProps}
                 selected={selected}
                 disabled={disabled}
                 selectionViewType={selectionViewType}
-                className={'g-list-item-view_theme-uikit'}
                 content={
                     <UIKitListItemViewContent
                         {...content}
