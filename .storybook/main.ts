@@ -1,24 +1,29 @@
 import type {StorybookConfig} from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-    stories: ['../src/**/*.stories.@(ts|tsx)'],
-    addons: [
-        '@storybook/preset-scss',
-        {name: '@storybook/addon-essentials', options: {backgrounds: false}},
-        '@storybook/addon-webpack5-compiler-babel'
+    framework: '@storybook/react-webpack5',
+    stories: [
+        '../src/components/TreeList/__stories__/TreeList.stories.tsx',
+        '../src/components/Component/__stories__/*.stories.tsx',
     ],
-
-    framework: {
-        name: '@storybook/react-webpack5',
-        options: {}
-    },
-
-    docs: {
-        autodocs: true
-    },
+    addons: [
+        {
+            name: '@storybook/addon-styling-webpack',
+            options: {
+                rules: [
+                    {
+                        test: /\.(css|scss)$/i,
+                        use: ['style-loader', 'css-loader', 'sass-loader'],
+                    },
+                ],
+            },
+        },
+        '@storybook/addon-webpack5-compiler-babel',
+        '@storybook/addon-docs',
+    ],
     core: {
         disableTelemetry: true,
     },
 };
 
-module.exports = config;
+export default config;

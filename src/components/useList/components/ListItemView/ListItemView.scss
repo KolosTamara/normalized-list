@@ -1,0 +1,53 @@
+@use '../../../variables';
+
+$block: '.#{variables.$ns}list-item-view';
+
+#{$block} {
+    --g-list-item-background-hover: rgba(0, 0, 0, 0.05);
+    --g-list-item-background-selected: rgba(0, 100, 255, 0.12);
+    --g-list-item-background-dragging: rgba(0, 0, 0, 0.08);
+    // more than `Sheet` z-index (100000) if `ListItemView` used in this component
+    --g-list-item-dragging-z-index: 100001;
+
+    flex-shrink: 0;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 0 8px;
+
+    &:hover#{$block}_activeOnHover,
+    &_active {
+        background: var(--g-list-item-background-hover);
+    }
+
+    &_clickable {
+        cursor: pointer;
+    }
+
+    &_selected,
+    &_selected#{$block}_active, // if active and selected selected bgc more priority
+    &_selected:hover#{$block}_activeOnHover {
+        background: var(--g-list-item-background-selected);
+    }
+
+    &_dragging,
+    &_dragging#{$block}_selected,
+    &_dragging#{$block}_active {
+        background: var(--g-list-item-background-dragging);
+        /* stylelint-disable-next-line declaration-no-important */
+        z-index: var(--g-list-item-dragging-z-index) !important;
+    }
+
+    &_radius_s {
+        border-radius: var(--g-list-item-border-radius, 3px);
+    }
+    &_radius_m {
+        border-radius: var(--g-list-item-border-radius, 5px);
+    }
+    &_radius_l {
+        border-radius: var(--g-list-item-border-radius, 6px);
+    }
+    &_radius_xl {
+        border-radius: var(--g-list-item-border-radius, 8px);
+    }
+}
