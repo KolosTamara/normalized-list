@@ -4,7 +4,7 @@ const config: StorybookConfig = {
     framework: '@storybook/react-webpack5',
     stories: [
         '../src/components/TreeList/__stories__/TreeList.stories.tsx',
-        '../src/components/Component/__stories__/*.stories.tsx',
+        '../src/components/TreeSelect/__stories__/TreeSelect.stories.tsx',
     ],
     addons: [
         {
