@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import type {ListItemType} from '../../useList';
-import {TreeSelect} from '../TreeSelect';
-import type {TreeSelectProps} from '../types';
+import type {ListItemType} from '../../../useList';
+import {TreeSelect} from '../../TreeSelect';
+import type {TreeSelectProps} from '../../types';
 
-import './ErrorStateExample.scss';
+import './DefaultErrorStateExample.scss';
 
 type Entity = string;
 
@@ -19,7 +19,7 @@ const errorMessage = 'A validation error has occurred';
 /**
  * Plain TreeSelect error states (outside + inside) without UIKit.
  */
-export const ErrorStateExample = (props: ErrorStateExampleProps) => {
+export const DefaultErrorStateExample = (props: ErrorStateExampleProps) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     return (

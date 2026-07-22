@@ -5,27 +5,17 @@ import * as React from 'react';
 import {ChevronDown, TriangleExclamation} from '@gravity-ui/icons';
 import {Alert, Icon, Popover, useDirection} from '@gravity-ui/uikit';
 
-import {block} from '../../../../../utils/cn';
-import type {TreeSelectRenderControlProps} from '../../../../types';
+import {block} from '../../../../utils/cn';
+import type {TreeSelectRenderControlProps} from '../../../types';
 import {SelectClear} from '../SelectClear';
 
 import './SelectControl.scss';
 
 const b = block('tree-select-uikit-control');
 
-function getSelectedContent<T>({
-    list,
-    value,
-}: Pick<TreeSelectRenderControlProps<T>, 'list' | 'value'>) {
-    return value
-        .map((itemId) =>
-            itemId in list.structure.itemsById ? String(list.structure.itemsById[itemId]) : '',
-        )
-        .filter(Boolean)
-        .join(', ');
-}
-
-export type SelectControlProps<T> = TreeSelectRenderControlProps<T>;
+export type SelectControlProps<T> = TreeSelectRenderControlProps<T> & {
+    selectedOptionsContent: React.ReactNode;
+};
 
 /**
  * Story recipe: TreeSelect control matching UIKit SelectControl layout
@@ -36,7 +26,7 @@ export const SelectControl = <T,>({
     toggleOpen,
     clearValue,
     value,
-    list,
+    selectedOptionsContent,
     ref,
     size = 'm',
     id,
@@ -50,7 +40,6 @@ export const SelectControl = <T,>({
     const direction = useDirection();
     const [isDisabledButtonAnimation, setIsDisabledButtonAnimation] = React.useState(false);
 
-    const selectedOptionsContent = getSelectedContent({list, value});
     const showOptionsText = Boolean(selectedOptionsContent);
     const showPlaceholder = Boolean(placeholder && !showOptionsText);
     const hasValue = value.filter(Boolean).length > 0;

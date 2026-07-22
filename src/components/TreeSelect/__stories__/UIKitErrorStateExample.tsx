@@ -2,19 +2,20 @@ import * as React from 'react';
 
 import {Flex, Text} from '@gravity-ui/uikit';
 
-import {UIKitListItemExpandIcon} from '../../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../../TreeList/__stories__/recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../../TreeList/__stories__/recipes/UIKitListItemViewContent';
-import type {ListItemType} from '../../../useList';
-import {TreeSelect} from '../../TreeSelect';
+import {UIKitListItemExpandIcon} from '../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../TreeList/__stories__/recipes/UIKitListItemView';
+import {UIKitListItemViewContent} from '../../TreeList/__stories__/recipes/UIKitListItemViewContent';
+import type {ListItemType} from '../../useList';
+import {TreeSelect} from '../TreeSelect';
 import type {
     TreeSelectProps,
     TreeSelectRenderControlProps,
     TreeSelectRenderItem,
     TreeSelectRenderPopupProps,
-} from '../../types';
+} from '../types';
 
 import {SelectControl, SelectPopup} from './components';
+import {getSelectedOptionsContent} from './utils';
 
 type Entity = string;
 
@@ -30,6 +31,8 @@ export interface UIKitErrorStateExampleProps extends Omit<
 
 const items: ListItemType<Entity>[] = ['one', 'two', 'free'];
 const errorMessage = 'A validation error has occurred';
+
+const mapItemDataToContentProps = (title: Entity) => ({title});
 
 const renderUIKitItem: TreeSelectRenderItem<Entity> = ({
     props: itemProps,
@@ -70,13 +73,19 @@ export const UIKitErrorStateExample = (props: UIKitErrorStateExampleProps) => {
         getItemId: (id: Entity) => id,
         placeholder: '-',
         containerRef,
-        mapItemDataToContentProps: (title: Entity) => ({title}),
+        mapItemDataToContentProps,
         errorMessage,
         validationState: 'invalid' as const,
         hasClear: true,
         renderItem: renderUIKitItem,
         renderControl: (controlProps: TreeSelectRenderControlProps<Entity>) => (
-            <SelectControl {...controlProps} />
+            <SelectControl
+                {...controlProps}
+                selectedOptionsContent={getSelectedOptionsContent(
+                    controlProps,
+                    mapItemDataToContentProps,
+                )}
+            />
         ),
         renderPopup: (popupProps: TreeSelectRenderPopupProps) => <SelectPopup {...popupProps} />,
     };

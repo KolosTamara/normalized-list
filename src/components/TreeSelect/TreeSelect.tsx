@@ -193,13 +193,14 @@ export const TreeSelect = React.forwardRef(function TreeSelect<T, P extends {} =
     ) : (
         <TreeSelectControl
             {...controlProps}
-            selectedOptionsContent={React.Children.toArray(
-                value.map((itemId) =>
+            selectedOptionsContent={value
+                .map((itemId) =>
                     itemId in list.structure.itemsById
                         ? mapItemDataToContentProps(list.structure.itemsById[itemId]).title
                         : '',
-                ),
-            ).join(', ')}
+                )
+                .filter(Boolean)
+                .join(', ')}
             popupId={popupId}
         />
     );

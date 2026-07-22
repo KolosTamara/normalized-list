@@ -1,10 +1,10 @@
 import {Xmark} from '@gravity-ui/icons';
 import {Icon} from '@gravity-ui/uikit';
 
-import {block} from '../../../../../utils/cn';
+import {block} from '../../../../utils/cn';
 
 import './SelectClear.scss';
-import {ListItemSize} from '../../../../../useList';
+import {ListItemSize} from '../../../../useList';
 
 const b = block('tree-select-uikit-control-clear');
 

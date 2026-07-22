@@ -1,7 +1,7 @@
 import {flip, offset as floatingOffset, limitShift, shift, size} from '@floating-ui/react';
 import type {Middleware} from '@floating-ui/react';
 
-import type {TreeSelectRenderPopupProps} from '../../../../types';
+import type {TreeSelectRenderPopupProps} from '../../../types';
 
 const BORDER_WIDTH = 1;
 

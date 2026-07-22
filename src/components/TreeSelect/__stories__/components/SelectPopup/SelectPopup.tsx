@@ -2,8 +2,8 @@
 
 import {Popup} from '@gravity-ui/uikit';
 
-import {block} from '../../../../../utils/cn';
-import type {TreeSelectPopupPlacement, TreeSelectRenderPopupProps} from '../../../../types';
+import {block} from '../../../../utils/cn';
+import type {TreeSelectPopupPlacement, TreeSelectRenderPopupProps} from '../../../types';
 
 import {getMiddlewares} from './middlewares';
 
@@ -35,7 +35,7 @@ export const SelectPopup = ({
     return (
         <Popup
             className={b(null, className)}
-            anchorElement={anchorRef.current}
+            anchorRef={anchorRef}
             placement={placement}
             open={open}
             onOpenChange={(nextOpen) => {
