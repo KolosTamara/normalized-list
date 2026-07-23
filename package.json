@@ -51,6 +51,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@faker-js/faker": "^9.8.0",
+    "@floating-ui/react": "^0.27.20",
     "@gravity-ui/eslint-config": "^4.2.0",
     "@gravity-ui/gulp-utils": "^1.0.3",
     "@gravity-ui/icons": "^2.16.0",

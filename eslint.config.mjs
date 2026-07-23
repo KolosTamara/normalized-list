@@ -1,11 +1,18 @@
 import baseConfig from '@gravity-ui/eslint-config';
+import clientConfig from '@gravity-ui/eslint-config/client';
 import prettierConfig from '@gravity-ui/eslint-config/prettier';
 import {defineConfig} from 'eslint/config';
 import globals from 'globals';
 
 export default defineConfig([
     ...baseConfig,
+    ...clientConfig,
     ...prettierConfig,
+    {
+        rules: {
+            'react/react-in-jsx-scope': 'off',
+        },
+    },
     {
         ignores: ['build', 'storybook-static'],
     },
