@@ -6,9 +6,7 @@ import {getListItemClickHandler, useList} from '../../../../useList';
 import type {ListItemType} from '../../../../useList';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
-import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
+import {ListItemExpandIcon, ListItemView, ListItemViewContent} from '../../../../../uikit';
 
 type TreeItemData = {
     text: string;
@@ -56,19 +54,19 @@ export const WithDisabledElementsStory = ({...storyProps}: WithDisabledElementsS
         const {content, selectionViewType, selected, disabled, ...shellProps} = itemProps;
 
         return (
-            <UIKitListItemView
+            <ListItemView
                 {...shellProps}
                 {...renderContainerProps}
                 selected={selected}
                 disabled={disabled}
                 selectionViewType={selectionViewType}
                 content={
-                    <UIKitListItemViewContent
+                    <ListItemViewContent
                         {...content}
                         hasSelectionIcon={selectionViewType === 'multiple'}
                         selected={selected}
                         disabled={disabled}
-                        renderExpandIcon={UIKitListItemExpandIcon}
+                        renderExpandIcon={ListItemExpandIcon}
                     />
                 }
             />

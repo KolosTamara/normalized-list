@@ -8,9 +8,7 @@ import type {ListItemId, ListItemViewContentType} from '../../../../useList';
 import {createRandomizedData} from '../../../../useList/__stories__/utils/makeData';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
-import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
+import {ListItemExpandIcon, ListItemView, ListItemViewContent} from '../../../../../uikit';
 
 const expandButtonLabel = 'Expand';
 const closeButtonLabel = 'Close';
@@ -74,11 +72,11 @@ export const WithGroupSelectionAndCustomIconStory = ({
                     const selectionViewType = props.multiple ? 'multiple' : 'single';
 
                     return (
-                        <UIKitListItemView
+                        <ListItemView
                             {...itemProps}
                             selectionViewType={selectionViewType}
                             content={
-                                <UIKitListItemViewContent
+                                <ListItemViewContent
                                     {...itemProps.content}
                                     isGroup={false}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
@@ -109,7 +107,7 @@ export const WithGroupSelectionAndCustomIconStory = ({
                                                 }
                                             >
                                                 <Button.Icon>
-                                                    <UIKitListItemExpandIcon
+                                                    <ListItemExpandIcon
                                                         expanded={itemProps.content.expanded}
                                                         behavior="action"
                                                     />

@@ -18,9 +18,7 @@ import {createRandomizedData} from '../../../../useList/__stories__/utils/makeDa
 import {reorderArray} from '../../../../useList/__stories__/utils/reorderArray';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps, TreeListRenderContainer, TreeListRenderItem} from '../../../types';
-import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
+import {ListItemExpandIcon, ListItemView, ListItemViewContent} from '../../../../../uikit';
 
 type CustomDataType = {someRandomKey: string; id: string};
 
@@ -43,7 +41,7 @@ const DraggableListItem = ({
             : {title: content};
 
     return (
-        <UIKitListItemView
+        <ListItemView
             {...provided?.dragHandleProps}
             {...provided?.draggableProps}
             ref={provided?.innerRef}
@@ -53,12 +51,12 @@ const DraggableListItem = ({
             selectionViewType={selectionViewType}
             role="option"
             content={
-                <UIKitListItemViewContent
+                <ListItemViewContent
                     {...contentProps}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
-                    renderExpandIcon={UIKitListItemExpandIcon}
+                    renderExpandIcon={ListItemExpandIcon}
                 />
             }
         />

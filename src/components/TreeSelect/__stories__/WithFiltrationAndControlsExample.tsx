@@ -2,9 +2,6 @@ import * as React from 'react';
 
 import {Button, Flex, Text, TextInput, spacing} from '@gravity-ui/uikit';
 
-import {UIKitListItemExpandIcon} from '../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../TreeList/__stories__/recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../TreeList/__stories__/recipes/UIKitListItemViewContent';
 import {ListContainer, useListFilter} from '../../useList';
 import {createRandomizedData} from '../../useList/__stories__/utils/makeData';
 import {TreeSelect} from '../TreeSelect';
@@ -16,8 +13,14 @@ import type {
     TreeSelectRenderPopupProps,
 } from '../types';
 
-import {SelectControl, SelectPopup} from './components';
-import {getSelectedOptionsContent} from './utils';
+import {
+    ListItemExpandIcon,
+    ListItemView,
+    ListItemViewContent,
+    SelectControl,
+    SelectPopup,
+    getSelectedOptionsContent,
+} from '../../../uikit';
 
 interface Entity {
     title: string;
@@ -47,19 +50,19 @@ const renderUIKitItem: TreeSelectRenderItem<Entity> = ({
     const {content, selectionViewType, selected, disabled, ...shellProps} = itemProps;
 
     return (
-        <UIKitListItemView
+        <ListItemView
             {...shellProps}
             {...renderContainerProps}
             selected={selected}
             disabled={disabled}
             selectionViewType={selectionViewType}
             content={
-                <UIKitListItemViewContent
+                <ListItemViewContent
                     {...content}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
-                    renderExpandIcon={UIKitListItemExpandIcon}
+                    renderExpandIcon={ListItemExpandIcon}
                 />
             }
         />

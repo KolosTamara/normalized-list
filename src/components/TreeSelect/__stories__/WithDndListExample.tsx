@@ -11,9 +11,6 @@ import type {
     OnDragEndResponder,
 } from '@hello-pangea/dnd';
 
-import {UIKitListItemExpandIcon} from '../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../TreeList/__stories__/recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../TreeList/__stories__/recipes/UIKitListItemViewContent';
 import type {ListItemViewProps} from '../../useList';
 import {ListContainerView} from '../../useList';
 import {createRandomizedData} from '../../useList/__stories__/utils/makeData';
@@ -27,15 +24,21 @@ import type {
     TreeSelectRenderPopupProps,
 } from '../types';
 
-import {SelectControl, SelectPopup} from './components';
-import {getSelectedOptionsContent} from './utils';
+import {
+    ListItemExpandIcon,
+    ListItemView,
+    ListItemViewContent,
+    SelectControl,
+    SelectPopup,
+    getSelectedOptionsContent,
+} from '../../../uikit';
 
 const DraggableListItem = ({
     provided,
     ...props
 }: {provided?: DraggableProvided} & ListItemViewProps) => {
     return (
-        <UIKitListItemView
+        <ListItemView
             {...provided?.dragHandleProps}
             {...provided?.draggableProps}
             ref={provided?.innerRef}
@@ -147,14 +150,14 @@ export const WithDndListExample = (storyProps: WithDndListExampleProps) => {
             disabled,
             selectionViewType,
             content: (
-                <UIKitListItemViewContent
+                <ListItemViewContent
                     {...content}
                     title={data.someRandomKey}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
                     endSlot={<Icon data={Grip} size={16} />}
-                    renderExpandIcon={UIKitListItemExpandIcon}
+                    renderExpandIcon={ListItemExpandIcon}
                 />
             ),
         };

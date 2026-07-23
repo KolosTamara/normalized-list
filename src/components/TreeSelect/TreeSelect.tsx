@@ -10,7 +10,9 @@ import type {ListOnItemClick} from '../useList';
 import {block} from '../utils/cn';
 import type {CnMods} from '../utils/cn';
 
-import {TreeSelectControl, TreeSelectError, TreeSelectPopup} from './components';
+import {TreeSelectControl} from './components/fallback/TreeSelectControl';
+import {TreeSelectError} from './components/fallback/TreeSelectError';
+import {TreeSelectPopup} from './components/fallback/TreeSelectPopup';
 import {useControlledValue} from './hooks/useControlledValue';
 import {useOpenState} from './hooks/useOpenState';
 import type {

@@ -135,7 +135,6 @@ export interface TreeSelectProps<T, P extends {} = {}>
     renderPopup?(props: TreeSelectRenderPopupProps): React.JSX.Element;
     /**
      * Ability to override outside error message rendering.
-     * Default: plain `TreeSelectError` fallback.
      */
     renderError?(props: TreeSelectRenderErrorProps): React.ReactNode;
     renderContainer?: TreeSelectRenderContainer<T>;

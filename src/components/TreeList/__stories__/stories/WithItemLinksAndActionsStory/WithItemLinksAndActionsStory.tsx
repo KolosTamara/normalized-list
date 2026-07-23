@@ -8,9 +8,7 @@ import type {ListItemId} from '../../../../useList';
 import {createRandomizedData} from '../../../../useList/__stories__/utils/makeData';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
-import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
+import {ListItemExpandIcon, ListItemView, ListItemViewContent} from '../../../../../uikit';
 
 const expandButtonLabel = 'Expand';
 const closeButtonLabel = 'Close';
@@ -51,10 +49,10 @@ export const WithItemLinksAndActionsStory = (props: WithItemLinksAndActionsStory
             renderItem={({id, props: itemProps, context: {childrenIds}}) => {
                 return (
                     <a href="#" style={{textDecoration: 'none', color: 'inherit', width: '100%'}}>
-                        <UIKitListItemView
+                        <ListItemView
                             {...itemProps}
                             content={
-                                <UIKitListItemViewContent
+                                <ListItemViewContent
                                     {...itemProps.content}
                                     isGroup={false}
                                     hasSelectionIcon={itemProps.selectionViewType === 'multiple'}
@@ -105,7 +103,7 @@ export const WithItemLinksAndActionsStory = (props: WithItemLinksAndActionsStory
                                                 }
                                             >
                                                 <Button.Icon>
-                                                    <UIKitListItemExpandIcon
+                                                    <ListItemExpandIcon
                                                         expanded={itemProps.content.expanded}
                                                         behavior="action"
                                                     />

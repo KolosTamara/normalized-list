@@ -1,3 +1,5 @@
+import type {QAProps} from '../types';
+
 export type ListItemId = string;
 
 export type ListItemSize = 's' | 'm' | 'l' | 'xl';
@@ -51,6 +53,8 @@ export interface ListItemExpandIconRenderProps {
     disabled?: boolean;
 }
 
+export type ListItemExpandIconProps = ListItemExpandIconRenderProps;
+
 export type ListItemViewContentType = {
     title: React.ReactNode;
     subtitle?: React.ReactNode;
@@ -74,6 +78,50 @@ export type ListItemViewContentType = {
      */
     renderExpandIcon?(props: ListItemExpandIconRenderProps): React.ReactNode;
 };
+
+export interface ListItemViewCommonProps<T extends React.ElementType = 'li'> extends QAProps {
+    /**
+     * @default `m`
+     */
+    size?: ListItemSize;
+    /**
+     * `[${LIST_ITEM_DATA_ATR}="${id}"]` data attribute to find element.
+     * For example for scroll to
+     */
+    id: ListItemId;
+    /**
+     * Note: if passed and `disabled` option is `true` click will not be appear
+     */
+    onClick?: React.ComponentPropsWithoutRef<T>['onClick'];
+    selected?: boolean;
+    disabled?: boolean;
+    active?: boolean;
+    selectionViewType?: 'single' | 'multiple';
+    content: ListItemViewContentType;
+}
+
+export interface ListItemViewProps<T extends React.ElementType = 'li'> extends Omit<
+    ListItemViewCommonProps<T>,
+    'content'
+> {
+    /**
+     * Ability to override default html tag
+     */
+    as?: T;
+    height?: number;
+    /**
+     * By default hovered elements has active styles. You can disable this behavior
+     */
+    activeOnHover?: boolean;
+    style?: React.CSSProperties;
+    className?: string;
+    role?: React.AriaRole;
+    /**
+     * Add active styles and change selection behavior during dnd is performing
+     */
+    dragging?: boolean;
+    content: ListItemViewContentType | React.ReactNode;
+}
 
 export type ListItemListContextProps = ItemState &
     Partial<GroupParsedState> & {

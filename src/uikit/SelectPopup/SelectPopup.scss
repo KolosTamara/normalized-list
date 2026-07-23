@@ -1,0 +1,9 @@
+@use '../../components/variables';
+
+$block: '.#{variables.$ns}tree-select-uikit-popup';
+
+#{$block} {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}

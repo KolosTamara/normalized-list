@@ -2,10 +2,7 @@ import * as React from 'react';
 
 import {Flex, Label, Loader, spacing} from '@gravity-ui/uikit';
 
-import {RenderVirtualizedContainer} from '../../TreeList/__stories__/recipes/RenderVirtualizedContainer';
-import {UIKitListItemExpandIcon} from '../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../TreeList/__stories__/recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../TreeList/__stories__/recipes/UIKitListItemViewContent';
+import {RenderVirtualizedContainer} from '../../TreeList/__stories__/components/RenderVirtualizedContainer';
 import type {TreeListOnItemClick} from '../../TreeList/types';
 import {getListItemClickHandler} from '../../useList';
 import type {ListItemId} from '../../useList';
@@ -18,8 +15,14 @@ import type {
     TreeSelectRenderPopupProps,
 } from '../types';
 
-import {SelectControl, SelectPopup} from './components';
-import {getSelectedOptionsContent} from './utils';
+import {
+    ListItemExpandIcon,
+    ListItemView,
+    ListItemViewContent,
+    SelectControl,
+    SelectPopup,
+    getSelectedOptionsContent,
+} from '../../../uikit';
 
 interface Entity {
     title: string;
@@ -102,18 +105,18 @@ export const InfinityScrollExample = ({
                     const {content, selectionViewType, selected, disabled, ...shellProps} = props;
 
                     const node = (
-                        <UIKitListItemView
+                        <ListItemView
                             {...shellProps}
                             selected={selected}
                             disabled={disabled}
                             selectionViewType={selectionViewType}
                             content={
-                                <UIKitListItemViewContent
+                                <ListItemViewContent
                                     {...content}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
                                     selected={selected}
                                     disabled={disabled}
-                                    renderExpandIcon={UIKitListItemExpandIcon}
+                                    renderExpandIcon={ListItemExpandIcon}
                                     endSlot={
                                         childrenIds ? (
                                             <Label>{childrenIds.length}</Label>

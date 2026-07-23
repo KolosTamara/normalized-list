@@ -3,9 +3,6 @@ import * as React from 'react';
 import {FolderOpen} from '@gravity-ui/icons';
 import {Button, DropdownMenu, Flex, Icon} from '@gravity-ui/uikit';
 
-import {UIKitListItemExpandIcon} from '../../TreeList/__stories__/recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../TreeList/__stories__/recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../TreeList/__stories__/recipes/UIKitListItemViewContent';
 import type {ListItemId, UseListResult} from '../../useList';
 import {createRandomizedData} from '../../useList/__stories__/utils/makeData';
 import {TreeSelect} from '../TreeSelect';
@@ -16,8 +13,14 @@ import type {
     TreeSelectRenderPopupProps,
 } from '../types';
 
-import {SelectControl, SelectPopup} from './components';
-import {getSelectedOptionsContent} from './utils';
+import {
+    ListItemExpandIcon,
+    ListItemView,
+    ListItemViewContent,
+    SelectControl,
+    SelectPopup,
+    getSelectedOptionsContent,
+} from '../../../uikit';
 
 const expandButtonLabel = 'Expand';
 const closeButtonLabel = 'Close';
@@ -69,10 +72,10 @@ export const WithItemLinksAndActionsExample = (storyProps: WithItemLinksAndActio
     }) => {
         return (
             <a href="#" style={{textDecoration: 'none', color: 'inherit', width: '100%'}}>
-                <UIKitListItemView
+                <ListItemView
                     {...itemProps}
                     content={
-                        <UIKitListItemViewContent
+                        <ListItemViewContent
                             {...itemProps.content}
                             isGroup={false}
                             hasSelectionIcon={itemProps.selectionViewType === 'multiple'}
@@ -119,7 +122,7 @@ export const WithItemLinksAndActionsExample = (storyProps: WithItemLinksAndActio
                                         }
                                     >
                                         <Button.Icon>
-                                            <UIKitListItemExpandIcon
+                                            <ListItemExpandIcon
                                                 expanded={itemProps.content.expanded}
                                                 behavior="action"
                                             />

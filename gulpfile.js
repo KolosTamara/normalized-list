@@ -76,15 +76,18 @@ task('copy-i18n', () => {
 });
 
 task('styles-components', () => {
-    return src(['src/components/**/*.scss', '!src/components/**/__stories__/**/*'])
+    return src(
+        ['src/components/**/*.scss', 'src/uikit/**/*.scss', '!src/components/**/__stories__/**/*'],
+        {base: 'src'},
+    )
         .pipe(
             sass.sync({loadPaths: ['src', 'node_modules']}).on('error', function (error) {
                 sass.logError.call(this, error);
                 process.exit(1);
             }),
         )
-        .pipe(dest(path.resolve(BUILD_DIR, 'esm', 'components')))
-        .pipe(dest(path.resolve(BUILD_DIR, 'cjs', 'components')));
+        .pipe(dest(path.resolve(BUILD_DIR, 'esm')))
+        .pipe(dest(path.resolve(BUILD_DIR, 'cjs')));
 });
 
 task(

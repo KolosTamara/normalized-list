@@ -5,10 +5,8 @@ import {IntersectionContainer} from '../../../../useList/__stories__/components/
 import {useInfinityFetch} from '../../../../useList/__stories__/utils/useInfinityFetch';
 import {TreeList} from '../../../TreeList';
 import type {TreeListProps} from '../../../types';
-import {RenderVirtualizedContainer} from '../../recipes/RenderVirtualizedContainer';
-import {UIKitListItemExpandIcon} from '../../recipes/UIKitListItemExpandIcon';
-import {UIKitListItemView} from '../../recipes/UIKitListItemView';
-import {UIKitListItemViewContent} from '../../recipes/UIKitListItemViewContent';
+import {RenderVirtualizedContainer} from '../../components/RenderVirtualizedContainer';
+import {ListItemExpandIcon, ListItemView, ListItemViewContent} from '../../../../../uikit';
 
 interface Entity {
     title: string;
@@ -47,18 +45,18 @@ export const InfinityScrollStory = ({itemsCount = 3, ...storyProps}: InfinityScr
                     const {content, selectionViewType, selected, disabled, ...shellProps} = props;
 
                     const node = (
-                        <UIKitListItemView
+                        <ListItemView
                             {...shellProps}
                             selected={selected}
                             disabled={disabled}
                             selectionViewType={selectionViewType}
                             content={
-                                <UIKitListItemViewContent
+                                <ListItemViewContent
                                     {...content}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
                                     selected={selected}
                                     disabled={disabled}
-                                    renderExpandIcon={UIKitListItemExpandIcon}
+                                    renderExpandIcon={ListItemExpandIcon}
                                     endSlot={
                                         childrenIds ? (
                                             <Label>{childrenIds.length}</Label>
