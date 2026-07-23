@@ -65,4 +65,23 @@ export default defineConfig([
             ],
         },
     },
+    {
+        // Fallback UI is internal — do not re-export it from public barrels.
+        files: ['src/index.ts', 'src/components/*/index.ts'],
+        rules: {
+            'no-restricted-imports': [
+                'error',
+                {
+                    patterns: [
+                        {
+                            // Matches import and export-from of fallback modules.
+                            regex: '(^|/)fallback(/|$)',
+                            message:
+                                'Do not re-export fallback UI from the public API. Keep fallback internal; export types/render props instead.',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
 ]);
