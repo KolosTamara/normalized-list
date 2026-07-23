@@ -13,7 +13,7 @@ import './SelectControl.scss';
 
 const b = block('tree-select-uikit-control');
 
-export type SelectControlProps<T> = TreeSelectRenderControlProps<T> & {
+export type SelectControlProps<T> = Omit<TreeSelectRenderControlProps<T>, 'ref'> & {
     selectedOptionsContent: React.ReactNode;
 };
 
@@ -21,22 +21,24 @@ export type SelectControlProps<T> = TreeSelectRenderControlProps<T> & {
  * Story recipe: TreeSelect control matching UIKit SelectControl layout
  * with a dedicated BEM block and public UIKit SCSS mixins.
  */
-export const SelectControl = <T,>({
-    open,
-    toggleOpen,
-    clearValue,
-    value,
-    selectedOptionsContent,
-    ref,
-    size = 'm',
-    id,
-    placeholder,
-    disabled,
-    title,
-    hasClear,
-    errorMessage,
-    isErrorVisible,
-}: SelectControlProps<T>) => {
+export const SelectControl = React.forwardRef(function SelectControl<T>(
+    {
+        open,
+        toggleOpen,
+        clearValue,
+        value,
+        selectedOptionsContent,
+        size = 'm',
+        id,
+        placeholder,
+        disabled,
+        title,
+        hasClear,
+        errorMessage,
+        isErrorVisible,
+    }: SelectControlProps<T>,
+    ref: React.Ref<HTMLButtonElement>,
+) {
     const direction = useDirection();
     const [isDisabledButtonAnimation, setIsDisabledButtonAnimation] = React.useState(false);
 
@@ -132,4 +134,6 @@ export const SelectControl = <T,>({
             />
         </div>
     );
-};
+}) as <T>(
+    props: SelectControlProps<T> & {ref?: React.Ref<HTMLButtonElement>},
+) => React.ReactElement;
