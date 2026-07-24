@@ -11,7 +11,7 @@ import {TreeSelectClear} from '../TreeSelectClear';
 
 import './TreeSelectControl.scss';
 
-const b = block('tree-select-uikit-control');
+const b = block('tree-select-control');
 
 export type TreeSelectControlProps<T> = Omit<TreeSelectRenderControlProps<T>, 'ref'> & {
     selectedOptionsContent: React.ReactNode;

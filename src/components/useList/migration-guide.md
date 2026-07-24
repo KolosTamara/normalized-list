@@ -4,7 +4,7 @@
 
 - changed prop `hasSelectionIcon?: boolean` to prop `selectionViewType?: 'multiple' | 'single'` with default value `multiple`;
 - now mix of ccs class works that applied at root of component;
-- ability to set item height by css custom property `--g-list-item-height`;
+- ability to set item height by css custom property `--g-ts-list-item-height`;
 - new ability to pass custom react node as `content` prop;
 
 ```diff

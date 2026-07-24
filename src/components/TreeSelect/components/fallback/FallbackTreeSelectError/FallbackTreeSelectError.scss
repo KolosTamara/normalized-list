@@ -1,6 +1,7 @@
 @use '../../../../variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}fallback-tree-select-error';
+$block: '.#{$ns}fallback-tree-select-error';
 
 #{$block} {
     margin-block-start: 4px;

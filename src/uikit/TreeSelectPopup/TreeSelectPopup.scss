@@ -1,6 +1,7 @@
 @use '../../components/variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}tree-select-uikit-popup';
+$block: '.#{$ns}tree-select-popup';
 
 #{$block} {
     display: flex;

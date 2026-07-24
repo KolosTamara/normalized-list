@@ -1,15 +1,16 @@
 @use '../../../../variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}fallback-tree-select-control';
+$block: '.#{$ns}fallback-tree-select-control';
 
 #{$block} {
-    --g-fallback-tree-select-control-border: rgba(0, 0, 0, 0.15);
-    --g-fallback-tree-select-control-border-hover: rgba(0, 0, 0, 0.3);
-    --g-fallback-tree-select-control-border-error: #e9033a;
-    --g-fallback-tree-select-control-bg: #fff;
-    --g-fallback-tree-select-control-placeholder: rgba(0, 0, 0, 0.45);
-    --g-fallback-tree-select-control-text: rgba(0, 0, 0, 0.85);
-    --g-fallback-tree-select-control-disabled: rgba(0, 0, 0, 0.3);
+    --#{$ns}fallback-tree-select-control-border: rgba(0, 0, 0, 0.15);
+    --#{$ns}fallback-tree-select-control-border-hover: rgba(0, 0, 0, 0.3);
+    --#{$ns}fallback-tree-select-control-border-error: #e9033a;
+    --#{$ns}fallback-tree-select-control-bg: #fff;
+    --#{$ns}fallback-tree-select-control-placeholder: rgba(0, 0, 0, 0.45);
+    --#{$ns}fallback-tree-select-control-text: rgba(0, 0, 0, 0.85);
+    --#{$ns}fallback-tree-select-control-disabled: rgba(0, 0, 0, 0.3);
 
     box-sizing: border-box;
     display: inline-flex;
@@ -17,10 +18,10 @@ $block: '.#{variables.$ns}fallback-tree-select-control';
     gap: 4px;
     max-width: 100%;
     width: 100%;
-    border: 1px solid var(--g-fallback-tree-select-control-border);
+    border: 1px solid var(--#{$ns}fallback-tree-select-control-border);
     border-radius: 6px;
-    background: var(--g-fallback-tree-select-control-bg);
-    color: var(--g-fallback-tree-select-control-text);
+    background: var(--#{$ns}fallback-tree-select-control-bg);
+    color: var(--#{$ns}fallback-tree-select-control-text);
 
     &_size_s {
         min-height: 24px;
@@ -50,20 +51,20 @@ $block: '.#{variables.$ns}fallback-tree-select-control';
     }
 
     &:hover:not(#{$block}_disabled) {
-        border-color: var(--g-fallback-tree-select-control-border-hover);
+        border-color: var(--#{$ns}fallback-tree-select-control-border-hover);
     }
 
     &_open:not(#{$block}_disabled),
     &:focus-within:not(#{$block}_disabled) {
-        border-color: var(--g-fallback-tree-select-control-border-hover);
+        border-color: var(--#{$ns}fallback-tree-select-control-border-hover);
     }
 
     &_error {
-        border-color: var(--g-fallback-tree-select-control-border-error);
+        border-color: var(--#{$ns}fallback-tree-select-control-border-error);
     }
 
     &_disabled {
-        color: var(--g-fallback-tree-select-control-disabled);
+        color: var(--#{$ns}fallback-tree-select-control-disabled);
         cursor: not-allowed;
         opacity: 0.7;
     }
@@ -90,7 +91,7 @@ $block: '.#{variables.$ns}fallback-tree-select-control';
 
     &__placeholder {
         overflow: hidden;
-        color: var(--g-fallback-tree-select-control-placeholder);
+        color: var(--#{$ns}fallback-tree-select-control-placeholder);
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -128,7 +129,7 @@ $block: '.#{variables.$ns}fallback-tree-select-control';
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background: var(--g-fallback-tree-select-control-border-error);
+        background: var(--#{$ns}fallback-tree-select-control-border-error);
         color: #fff;
         font-size: 11px;
         font-weight: 700;

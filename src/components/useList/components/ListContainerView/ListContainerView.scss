@@ -1,6 +1,7 @@
 @use '../../../variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}list-container-view';
+$block: '.#{$ns}list-container-view';
 
 #{$block} {
     box-sizing: border-box;
@@ -11,7 +12,7 @@ $block: '.#{variables.$ns}list-container-view';
     outline: none;
 
     &_fixed-height {
-        height: var(--g-list-container-height, 300px);
+        height: var(--#{$ns}list-container-height, 300px);
     }
 
     &:not(#{$block}_fixed-height) {

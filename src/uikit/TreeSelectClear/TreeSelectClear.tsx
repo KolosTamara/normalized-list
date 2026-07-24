@@ -6,7 +6,7 @@ import {block} from '../../components/utils/cn';
 
 import './TreeSelectClear.scss';
 
-const b = block('tree-select-uikit-control-clear');
+const b = block('tree-select-control-clear');
 
 export type TreeSelectClearProps = {
     size: ListItemSize;

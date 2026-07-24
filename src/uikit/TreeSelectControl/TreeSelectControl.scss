@@ -3,9 +3,11 @@
 @use '../TreeSelectClear/TreeSelectClear.scss' as select-clear;
 @use '../variables' as sizes;
 
-// Synced with @gravity-ui/uikit SelectControl.scss; own block to avoid collisions
-// with real `.g-select-control` styles.
-$block: '.#{variables.$ns}tree-select-uikit-control';
+$ns: variables.$ns;
+
+// Synced with @gravity-ui/uikit SelectControl.scss; own block (via $ns) to avoid
+// collisions with `.g-select-control` and uikit `.g-tree-select` styles.
+$block: '.#{$ns}tree-select-control';
 $block-button: '#{$block}__button';
 
 @mixin block-control($size: m) {

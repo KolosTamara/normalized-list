@@ -2,7 +2,9 @@
 @use '../../components/variables';
 @use '../variables' as sizes;
 
-$block: '.#{variables.$ns}tree-select-uikit-control-clear';
+$ns: variables.$ns;
+
+$block: '.#{$ns}tree-select-control-clear';
 
 #{$block} {
     @include mixins.button-reset();

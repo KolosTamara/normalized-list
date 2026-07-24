@@ -12,7 +12,7 @@ import {getMiddlewares} from './middlewares';
 
 import './TreeSelectPopup.scss';
 
-const b = block('tree-select-uikit-popup');
+const b = block('tree-select-popup');
 
 const DEFAULT_PLACEMENT: TreeSelectPopupPlacement = [
     'bottom-start',

@@ -1,6 +1,7 @@
 @use '../../../../variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}fallback-list-item-expand-icon';
+$block: '.#{$ns}fallback-list-item-expand-icon';
 
 #{$block} {
     flex-shrink: 0;

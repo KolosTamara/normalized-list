@@ -2,8 +2,11 @@ import * as React from 'react';
 
 import {ListItemView as HeadlessListItemView} from '../../components/useList';
 import type {ListItemViewProps} from '../../components/useList';
+import {block} from '../../components/utils/cn';
 
 import './TreeListItemView.scss';
+
+const b = block('list-item-view');
 
 export const TreeListItemView = React.forwardRef(function TreeListItemView(
     {className, ...props}: ListItemViewProps,
@@ -13,7 +16,7 @@ export const TreeListItemView = React.forwardRef(function TreeListItemView(
         <HeadlessListItemView
             {...props}
             ref={ref}
-            className={['g-list-item-view_theme-uikit', className].filter(Boolean).join(' ')}
+            className={b({'theme-uikit': true}, className)}
         />
     );
 }) as typeof HeadlessListItemView;
