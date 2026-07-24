@@ -1,0 +1,21 @@
+@use '../../../../variables';
+
+$block: '.#{variables.$ns}fallback-tree-select-popup';
+
+#{$block} {
+    --g-fallback-tree-select-popup-bg: #fff;
+    --g-fallback-tree-select-popup-border: rgba(0, 0, 0, 0.1);
+    --g-fallback-tree-select-popup-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    --g-fallback-tree-select-popup-z-index: 1000;
+
+    box-sizing: border-box;
+    z-index: var(--g-fallback-tree-select-popup-z-index);
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    max-height: 90vh;
+    border: 1px solid var(--g-fallback-tree-select-popup-border);
+    border-radius: 8px;
+    background: var(--g-fallback-tree-select-popup-bg);
+    box-shadow: var(--g-fallback-tree-select-popup-shadow);
+}

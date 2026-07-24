@@ -22,5 +22,5 @@ Override CSS variables on `.g-list-item-view` (or a theme class):
 Example: `@gravity-ui/tree-select/uikit` wraps this component and remaps the
 variables to Gravity UI color tokens via `.g-list-item-view_theme-uikit`.
 
-Default **content** renderers (`ListItemViewContent`, `ListItemExpandIcon`) live
+Default **content** renderers (`FallbackListItemViewContent`, `FallbackListItemExpandIcon`) live
 in `../fallback` and are internal — prefer custom `content` / UIKit recipes.

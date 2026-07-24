@@ -1,6 +1,7 @@
 # Fallback UI
 
-Minimal default view components used when consumers do not provide custom renderers
+Minimal default view components (`FallbackTreeSelectControl`, `FallbackTreeSelectPopup`,
+`FallbackTreeSelectError`) used when consumers do not provide custom renderers
 (`renderControl`, `renderPopup`, `renderError`).
 
 These components are **internal**. Do not export them from the package public API.

@@ -1,7 +1,7 @@
 # Fallback UI
 
-Minimal default view components used when consumers do not provide custom renderers
-(`renderItem`, content slots, expand icon, etc.).
+Minimal default view components (`FallbackListItemViewContent`, `FallbackListItemExpandIcon`)
+used when consumers do not provide custom renderers (content slots, expand icon, etc.).
 
 These components are **internal**. Do not export them from the package public API.
 

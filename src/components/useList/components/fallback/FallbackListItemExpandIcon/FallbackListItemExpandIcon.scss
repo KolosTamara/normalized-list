@@ -1,0 +1,33 @@
+@use '../../../../variables';
+
+$block: '.#{variables.$ns}fallback-list-item-expand-icon';
+
+#{$block} {
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    transition: transform 0.1s ease-out;
+
+    &_disabled {
+        color: rgba(0, 0, 0, 0.45);
+    }
+
+    &_direction {
+        &_bottom {
+            transform: matrix(1, 0, 0, 1, 0, 0);
+        }
+
+        &_left {
+            transform: matrix(0, 1, -1, 0, 0, 0);
+        }
+
+        &_top {
+            transform: matrix(-1, 0, 0, -1, 0, 0);
+        }
+
+        &_right {
+            transform: matrix(0, -1, 1, 0, 0, 0);
+        }
+    }
+}

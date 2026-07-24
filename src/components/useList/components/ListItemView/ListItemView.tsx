@@ -3,7 +3,10 @@ import * as React from 'react';
 import {LIST_ITEM_DATA_ATR, modToHeight} from '../../constants';
 import type {ListItemViewProps} from '../../types';
 
-import {ListItemViewContent, isListItemContentPropsGuard} from '../fallback/ListItemViewContent';
+import {
+    FallbackListItemViewContent,
+    isListItemContentPropsGuard,
+} from '../fallback/FallbackListItemViewContent';
 import {b} from './styles';
 
 type ListItemViewRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
@@ -71,7 +74,7 @@ export const ListItemView = React.forwardRef(function ListItemView<
             {...rest}
         >
             {isListItemContentPropsGuard(content) ? (
-                <ListItemViewContent
+                <FallbackListItemViewContent
                     {...content}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}

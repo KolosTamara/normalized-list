@@ -5,6 +5,8 @@ const config: StorybookConfig = {
     stories: [
         '../src/components/TreeList/__stories__/TreeList.stories.tsx',
         '../src/components/TreeSelect/__stories__/TreeSelect.stories.tsx',
+        '../src/uikit/UIKitTreeList/__stories__/UIKitTreeList.stories.tsx',
+        '../src/uikit/UIKitTreeSelect/__stories__/UIKitTreeSelect.stories.tsx',
     ],
     addons: [
         {
