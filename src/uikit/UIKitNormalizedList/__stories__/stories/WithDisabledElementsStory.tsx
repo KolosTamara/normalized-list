@@ -7,11 +7,11 @@ import type {ListItemType} from '../../../../components/useNormalizedList';
 import {UIKitNormalizedList} from '../../../UIKitNormalizedList';
 import type {UIKitNormalizedListProps as NormalizedListProps} from '../../../UIKitNormalizedList';
 
-type TreeItemData = {
+type ItemData = {
     text: string;
 };
 
-const items: ListItemType<TreeItemData>[] = [
+const items: ListItemType<ItemData>[] = [
     {
         text: 'default disabled',
         disabled: true,
@@ -31,14 +31,14 @@ const items: ListItemType<TreeItemData>[] = [
     },
 ];
 
-const mapTreeItemToContentProps: NormalizedListProps<TreeItemData>['mapItemDataToContentProps'] = ({
+const mapItemToContentProps: NormalizedListProps<ItemData>['mapItemDataToContentProps'] = ({
     text,
 }) => ({
     title: text,
 });
 
 export interface WithDisabledElementsStoryProps extends Omit<
-    NormalizedListProps<TreeItemData>,
+    NormalizedListProps<ItemData>,
     'items' | 'mapItemDataToContentProps' | 'renderItem'
 > {}
 
@@ -62,7 +62,7 @@ export const WithDisabledElementsStory = ({...storyProps}: WithDisabledElementsS
                 {...storyProps}
                 list={list}
                 containerRef={containerRef}
-                mapItemDataToContentProps={mapTreeItemToContentProps}
+                mapItemDataToContentProps={mapItemToContentProps}
                 onItemClick={({id}) => {
                     getListItemClickHandler({list})({id});
                     alert(

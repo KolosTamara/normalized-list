@@ -1,6 +1,6 @@
 ### useListKeydown
 
-Keyboard support for tree/list containers (arrow up/down, Enter/Space).
+Keyboard support for list containers (arrow up/down, Enter/Space).
 
 [`NormalizedList`](/docs/normalized-list-normalizedlist--docs) already wires this — call it only in custom list shells.
 

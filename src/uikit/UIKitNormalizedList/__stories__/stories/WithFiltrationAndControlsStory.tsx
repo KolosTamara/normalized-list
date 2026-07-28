@@ -27,7 +27,7 @@ export interface WithFiltrationAndControlsStoryProps extends Omit<
 
 export const WithFiltrationAndControlsStory = ({
     itemsCount = 5,
-    ...treeListProps
+    ...normalizedListProps
 }: WithFiltrationAndControlsStoryProps) => {
     const {items, renderContainer} = React.useMemo(() => {
         const baseItems = createRandomizedData<Entity>({num: itemsCount});
@@ -63,7 +63,7 @@ export const WithFiltrationAndControlsStory = ({
                 controlRef={filterState.filterRef}
             />
             <UIKitNormalizedList
-                {...treeListProps}
+                {...normalizedListProps}
                 list={list}
                 mapItemDataToContentProps={(item) => item}
                 renderContainer={renderContainer}

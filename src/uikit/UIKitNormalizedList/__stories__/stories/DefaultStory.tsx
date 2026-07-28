@@ -7,17 +7,18 @@ import {createRandomizedData} from '../../../../components/useNormalizedList/__s
 import {UIKitNormalizedList} from '../../../UIKitNormalizedList';
 import type {UIKitNormalizedListProps} from '../../../UIKitNormalizedList';
 
-type TreeItemData = {
+type ItemData = {
     name: string;
 };
 
-const mapTreeItemToContentProps: UIKitNormalizedListProps<TreeItemData>['mapItemDataToContentProps'] =
-    (item) => ({
-        title: item.name,
-    });
+const mapItemToContentProps: UIKitNormalizedListProps<ItemData>['mapItemDataToContentProps'] = (
+    item,
+) => ({
+    title: item.name,
+});
 
 export interface DefaultStoryProps extends Omit<
-    UIKitNormalizedListProps<TreeItemData>,
+    UIKitNormalizedListProps<ItemData>,
     'items' | 'mapItemDataToContentProps' | 'list'
 > {
     itemsCount?: number;
@@ -29,7 +30,7 @@ export interface DefaultStoryProps extends Omit<
 export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
     const items = React.useMemo(
         () =>
-            createRandomizedData<TreeItemData>({
+            createRandomizedData<ItemData>({
                 num: itemsCount,
                 getData: (name) => ({name}),
             }),
@@ -50,7 +51,7 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
                 <UIKitNormalizedList
                     {...props}
                     list={listWithGroups}
-                    mapItemDataToContentProps={mapTreeItemToContentProps}
+                    mapItemDataToContentProps={mapItemToContentProps}
                 />
             </Flex>
             <Flex direction="column" gap={3}>
@@ -61,7 +62,7 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
                     {...props}
                     list={listWithNoGroups}
                     onItemClick={null}
-                    mapItemDataToContentProps={mapTreeItemToContentProps}
+                    mapItemDataToContentProps={mapItemToContentProps}
                 />
             </Flex>
         </Flex>

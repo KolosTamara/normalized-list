@@ -56,7 +56,7 @@ export const InfinityScrollExample = ({
         getListItemClickHandler({list})({id});
 
         if (list.state.expandedById && list.state.setExpanded && id in list.state.expandedById) {
-            const treeGroupNextValue = !list.state.expandedById[id];
+            const nextExpanded = !list.state.expandedById[id];
             const groupItemToToggleIds: ListItemId[] = [id];
             const stack = [...list.structure.groupsState[id].childrenIds];
 
@@ -73,7 +73,7 @@ export const InfinityScrollExample = ({
             list.state.setExpanded((prevValues) => ({
                 ...prevValues,
                 ...groupItemToToggleIds.reduce<Record<ListItemId, boolean>>((acc, itemId) => {
-                    acc[itemId] = treeGroupNextValue;
+                    acc[itemId] = nextExpanded;
 
                     return acc;
                 }, {}),

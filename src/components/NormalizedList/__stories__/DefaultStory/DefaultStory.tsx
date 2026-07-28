@@ -5,18 +5,18 @@ import './DefaultStory.scss';
 import {createRandomizedData} from '../../../useNormalizedList/__stories__/utils/makeData';
 import {NormalizedList, NormalizedListProps} from '../../../NormalizedList';
 
-type TreeItemData = {
+type ItemData = {
     name: string;
 };
 
-const mapTreeItemToContentProps: NormalizedListProps<TreeItemData>['mapItemDataToContentProps'] = (
+const mapItemToContentProps: NormalizedListProps<ItemData>['mapItemDataToContentProps'] = (
     item,
 ) => ({
     title: item.name,
 });
 
 export interface DefaultStoryProps extends Omit<
-    NormalizedListProps<TreeItemData>,
+    NormalizedListProps<ItemData>,
     'items' | 'mapItemDataToContentProps'
 > {
     itemsCount?: number;
@@ -25,7 +25,7 @@ export interface DefaultStoryProps extends Omit<
 export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
     const items = React.useMemo(
         () =>
-            createRandomizedData<TreeItemData>({
+            createRandomizedData<ItemData>({
                 num: itemsCount,
                 getData: (name) => ({name}),
             }),
@@ -46,7 +46,7 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
                 <NormalizedList
                     {...props}
                     list={listWithGroups}
-                    mapItemDataToContentProps={mapTreeItemToContentProps}
+                    mapItemDataToContentProps={mapItemToContentProps}
                 />
             </div>
             <div className="normalized-list-default-story__column">
@@ -58,7 +58,7 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
                     {...props}
                     list={listWithNoGroups}
                     onItemClick={null}
-                    mapItemDataToContentProps={mapTreeItemToContentProps}
+                    mapItemDataToContentProps={mapItemToContentProps}
                 />
             </div>
         </div>

@@ -1,6 +1,6 @@
 # ListItemView
 
-Structural row shell for tree/list items: size, selection, active/hover, disabled, dragging. Provided with neutral default visuals, theme or replace for production.
+Structural row shell for list items: size, selection, active/hover, disabled, dragging. Provided with neutral default visuals, theme or replace for production.
 
 For Gravity UI use theme wrapper: [UIKitListItemView](/docs/normalized-list-uikit-uikitlistitemview--docs) from `@gravity-ui/normalized-list/uikit`.
 

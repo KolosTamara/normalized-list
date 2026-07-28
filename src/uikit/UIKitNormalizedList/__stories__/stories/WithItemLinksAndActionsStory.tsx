@@ -18,17 +18,17 @@ const expandButtonLabel = 'Expand';
 const closeButtonLabel = 'Close';
 const moreOptionsButton = 'More options';
 
-type TreeItemData = {
+type ItemData = {
     title: string;
 };
 
 export interface WithItemLinksAndActionsStoryProps extends Omit<
-    NormalizedListProps<TreeItemData>,
+    NormalizedListProps<ItemData>,
     'items' | 'size' | 'mapItemDataToContentProps' | 'renderItem'
 > {}
 
 export const WithItemLinksAndActionsStory = (props: WithItemLinksAndActionsStoryProps) => {
-    const items = React.useMemo(() => createRandomizedData<TreeItemData>({num: 10, depth: 1}), []);
+    const items = React.useMemo(() => createRandomizedData<ItemData>({num: 10, depth: 1}), []);
 
     const list = useNormalizedList({items});
 

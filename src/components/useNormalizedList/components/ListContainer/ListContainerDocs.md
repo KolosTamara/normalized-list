@@ -1,6 +1,6 @@
 # ListContainer
 
-Default non-virtualized tree container for [NormalizedList](/docs/normalized-list-normalizedlist--docs) / [NormalizedSelect](/docs/normalized-list-normalizedselect--docs): walks `list.structure` and renders items recursively, wrapped in [`ListContainerView`](#listcontainerview).
+Default non-virtualized container for [NormalizedList](/docs/normalized-list-normalizedlist--docs) / [NormalizedSelect](/docs/normalized-list-normalizedselect--docs): walks `list.structure` and renders items recursively, wrapped in [`ListContainerView`](#listcontainerview).
 
 ## Usage
 

@@ -34,7 +34,7 @@ const mapItemDataToContentProps = (item: Entity) => item;
  */
 export const WithFiltrationAndControlsExample = ({
     itemsCount = 5,
-    ...treeSelectProps
+    ...normalizedSelectProps
 }: WithFiltrationAndControlsExampleProps) => {
     const {items, renderContainer} = React.useMemo(() => {
         const baseItems = createRandomizedData<Entity>({num: itemsCount});
@@ -60,7 +60,7 @@ export const WithFiltrationAndControlsExample = ({
     return (
         <Flex>
             <UIKitNormalizedSelect
-                {...treeSelectProps}
+                {...normalizedSelectProps}
                 mapItemDataToContentProps={mapItemDataToContentProps}
                 multiple
                 open={open}

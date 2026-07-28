@@ -39,7 +39,7 @@ export function Example() {
 
 | Prop                                                | Role                                                                                     |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `items`                                             | Tree data (`data` + optional `children` / `disabled`)                                    |
+| `items`                                             | Tree or Flat data (`data` + optional `children` / `disabled`)                            |
 | `mapItemDataToContentProps`                         | Maps each item’s `data` to list-item content (`title`, optional `subtitle`, slots, etc.) |
 | `value` / `defaultValue` / `onUpdate`               | Selected item ids                                                                        |
 | `multiple`                                          | Multi-select                                                                             |
