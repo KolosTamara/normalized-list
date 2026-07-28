@@ -1,0 +1,168 @@
+import {Meta, Markdown} from '@storybook/addon-docs/blocks';
+
+import UseListHook from './docs/use-normalized-list.md?raw';
+import UseListKeydownHook from './docs/use-list-keydown.md?raw';
+import UseListFilterHook from './docs/use-list-filter.md?raw';
+import GetListItemClickHandler from './docs/get-list-item-click-handler.md?raw';
+import ListItemView from './docs/list-item-view.md?raw';
+import ListContainerView from './docs/list-container-view.md?raw';
+import ListRecursiveRenderer from './docs/list-recursive-renderer.md?raw';
+import computeItemSize from './docs/compute-item-size.md?raw';
+import scrollToListItem from './docs/scroll-to-list-item.md?raw';
+import getItemRenderState from './docs/get-item-render-state.md?raw';
+import getListParsedState from './docs/get-list-parsed-state.md?raw';
+import getListItemQa from './docs/get-list-item-qa.md?raw';
+
+<Meta title="Lab/useNormalizedList/Docs" />
+
+# useNormalizedList
+
+A set of hooks and building blocks for creating list / tree list UIs.
+
+The basic idea is that hooks take all the complex logic on themselves, and all you have to do is implement the "dumb" components of the view.
+
+[`NormalizedList`](/docs/lab-normalizedlist--docs) and [`NormalizedSelect`](/docs/lab-normalizedselect--docs) are ready-made compositions built on these primitives — useful as references and as drop-in UI when they fit your needs.
+
+### Hooks:
+
+- [useNormalizedList](#usenormalizedlist)
+- [useListKeydown](#uselistkeydown)
+- [useListFilter](#uselistfilter)
+
+### Components (view):
+
+- [ListItemView](#listitemview)
+- [ListContainer](/docs/lab-usenormalizedlist-listcontainer--docs)
+- [ListContainerView](#listcontainerview)
+- [ListRecursiveRenderer](#listrecursiverenderer)
+
+### Utilities:
+
+- [getListItemClickHandler](#getlistitemclickhandler)
+- [computeItemSize](#computeitemsize)
+- [scrollToListItem](#scrolltolistitem)
+- [getItemRenderState](#getitemrenderstate)
+- [getListParsedState](#getlistparsedstate)
+- [getListItemQa](#getlistitemqa)
+
+## Quick code snippets
+
+### Flatten items:
+
+```tsx
+import * as React from 'react';
+import {
+    type ListItemType,
+    ListContainerView,
+    ListItemView,
+    getItemRenderState,
+    getListItemClickHandler,
+    useNormalizedList,
+    useListKeydown,
+} from '@gravity-ui/tree-select';
+
+const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
+
+function List() {
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const list = useNormalizedList({items});
+    const onItemClick = getListItemClickHandler({list, multiple: true});
+    useListKeydown({onItemClick, containerRef, list});
+
+    return (
+        <ListContainerView ref={containerRef}>
+            {list.structure.visibleFlattenIds.map((id) => {
+                const {props} = getItemRenderState({
+                    id,
+                    mapItemDataToContentProps: (title) => ({title}),
+                    onItemClick,
+                    list,
+                });
+
+                return <ListItemView key={id} {...props} />;
+            })}
+        </ListContainerView>
+    );
+}
+```
+
+### Tree item structure:
+
+```tsx
+import * as React from 'react';
+import {
+    type ListItemType,
+    ListContainerView,
+    ListItemRecursiveRenderer,
+    ListItemView,
+    getItemRenderState,
+    getListItemClickHandler,
+    useNormalizedList,
+} from '@gravity-ui/tree-select';
+
+const items: ListItemType<string>[] = [
+    {data: 'one'},
+    {data: 'two', children: [{data: 'tree', children: [{data: 'four'}, {data: 'five'}]}]},
+];
+
+function List() {
+    const containerRef = React.useRef<HTMLDivElement>(null);
+    const list = useNormalizedList({items});
+    const onItemClick = getListItemClickHandler({list});
+
+    return (
+        <ListContainerView ref={containerRef}>
+            {list.structure.items.map((itemSchema, index) => (
+                <ListItemRecursiveRenderer
+                    key={index}
+                    itemSchema={itemSchema}
+                    id={list.structure.rootIds[index]}
+                    list={list}
+                >
+                    {(id) => {
+                        const {props} = getItemRenderState({
+                            id,
+                            mapItemDataToContentProps: (title) => ({title}),
+                            onItemClick,
+                            list,
+                        });
+
+                        return <ListItemView {...props} />;
+                    }}
+                </ListItemRecursiveRenderer>
+            ))}
+        </ListContainerView>
+    );
+}
+```
+
+## Hooks
+
+<Markdown>{UseListHook}</Markdown>
+
+<Markdown>{UseListKeydownHook}</Markdown>
+
+<Markdown>{UseListFilterHook}</Markdown>
+
+## Components
+
+<Markdown>{ListItemView}</Markdown>
+
+<Markdown>{ListContainerView}</Markdown>
+
+<Markdown>{ListRecursiveRenderer}</Markdown>
+
+## Utilities
+
+<Markdown>{GetListItemClickHandler}</Markdown>
+
+<Markdown>{computeItemSize}</Markdown>
+
+<Markdown>{scrollToListItem}</Markdown>
+
+<Markdown>{getItemRenderState}</Markdown>
+
+<Markdown>{getListParsedState}</Markdown>
+
+<Markdown>{getListItemQa}</Markdown>

@@ -1,21 +1,21 @@
 # renderUIKitListItem
 
-Default `renderItem` for [`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) / [`UIKitTreeSelect`](/docs/lab-uikit-uikittreeselect--docs): composes [`TreeListItemView`](/docs/lab-uikit-treelistitemview--docs) + [`TreeListItemViewContent`](/docs/lab-uikit-treelistitemview--docs#treelistitemviewcontent) + [`TreeListItemExpandIcon`](/docs/lab-uikit-treelistitemexpandicon--docs).
+Default `renderItem` for [`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/lab-uikit-uikitnormalizedselect--docs): composes [`NormalizedListItemView`](/docs/lab-uikit-normalizedlistitemview--docs) + [`NormalizedListItemViewContent`](/docs/lab-uikit-normalizedlistitemview--docs#treelistitemviewcontent) + [`NormalizedListItemExpandIcon`](/docs/lab-uikit-normalizedlistitemexpandicon--docs).
 
 ## Usage
 
 ```tsx
-import {TreeList} from '@gravity-ui/tree-select';
+import {NormalizedList} from '@gravity-ui/tree-select';
 import {renderUIKitListItem} from '@gravity-ui/tree-select/uikit';
 
-<TreeList
+<NormalizedList
   list={list}
   mapItemDataToContentProps={(item) => ({title: item.title})}
   renderItem={renderUIKitListItem}
 />;
 ```
 
-[`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
+[`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalizedlist--docs) already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
 
 ```tsx
 renderItem={(args) => {

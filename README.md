@@ -12,20 +12,20 @@ Peer dependencies: `react`, `react-dom`. For the UIKit layer also install `@grav
 
 ## Package layout
 
-| Entry | Import                          | What you get                                                            |
-| ----- | ------------------------------- | ----------------------------------------------------------------------- |
-| Core  | `@gravity-ui/tree-select`       | `TreeSelect`, `TreeList`, `useList`, list building blocks               |
-| UIKit | `@gravity-ui/tree-select/uikit` | `UIKitTreeSelect`, `UIKitTreeList`, themed controls and list item views |
+| Entry | Import                          | What you get                                                                        |
+| ----- | ------------------------------- | ----------------------------------------------------------------------------------- |
+| Core  | `@gravity-ui/tree-select`       | `NormalizedSelect`, `NormalizedList`, `useNormalizedList`, list building blocks     |
+| UIKit | `@gravity-ui/tree-select/uikit` | `UIKitNormalizedSelect`, `UIKitNormalizedList`, themed controls and list item views |
 
 Core ships **minimal fallback UI** when you do not pass render props. Prefer custom renderers or the UIKit entry for production.
 
 ## Quick start
 
-### UIKit TreeList (recommended for Gravity UI apps)
+### UIKit NormalizedList (recommended for Gravity UI apps)
 
 ```tsx
-import {useList} from '@gravity-ui/tree-select';
-import {UIKitTreeList} from '@gravity-ui/tree-select/uikit';
+import {useNormalizedList} from '@gravity-ui/tree-select';
+import {UIKitNormalizedList} from '@gravity-ui/tree-select/uikit';
 
 const items = [
   {
@@ -35,35 +35,35 @@ const items = [
 ];
 
 export function Example() {
-  const list = useList({items, defaultExpandedState: 'expanded'});
+  const list = useNormalizedList({items, defaultExpandedState: 'expanded'});
 
-  return <UIKitTreeList list={list} multiple mapItemDataToContentProps={(item) => item} />;
+  return <UIKitNormalizedList list={list} multiple mapItemDataToContentProps={(item) => item} />;
 }
 ```
 
-### Core TreeList + `useList`
+### Core NormalizedList + `useNormalizedList`
 
 ```tsx
-import {TreeList, useList} from '@gravity-ui/tree-select';
+import {NormalizedList, useNormalizedList} from '@gravity-ui/tree-select';
 
 const items = [{data: {title: 'One'}}, {data: {title: 'Two'}}];
 
 export function Example() {
-  const list = useList({items});
+  const list = useNormalizedList({items});
 
-  return <TreeList list={list} mapItemDataToContentProps={(item) => item} />;
+  return <NormalizedList list={list} mapItemDataToContentProps={(item) => item} />;
 }
 ```
 
 ## Customization
 
-- **Render props** on `TreeSelect` / `TreeList`: `renderItem`, `renderContainer`, and on select also `renderControl`, `renderPopup`, `renderError`.
-- **Slots** on `TreeSelect`: `slotBeforeListBody`, `slotAfterListBody` (filter, footer, loader).
-- **Theming**: CSS classes use the package namespace `g-ts-`. Override variables such as `--g-ts-list-item-background-hover` on a parent or theme class.
+- **Render props** on `NormalizedSelect` / `NormalizedList`: `renderItem`, `renderContainer`, and on select also `renderControl`, `renderPopup`, `renderError`.
+- **Slots** on `NormalizedSelect`: `slotBeforeListBody`, `slotAfterListBody` (filter, footer, loader).
+- **Theming**: CSS classes use the package namespace `g-nl-`. Override variables such as `--g-nl-list-item-background-hover` on a parent or theme class.
 
 ## CSS namespace
 
-All package BEM roots and package-owned CSS variables (core and UIKit) are prefixed with `g-ts-`. Override variables such as `--g-ts-list-item-background-hover` on a parent or theme class.
+All package BEM roots and package-owned CSS variables (core and UIKit) are prefixed with `g-nl-`. Override variables such as `--g-nl-list-item-background-hover` on a parent or theme class.
 
 The UIKit entry additionally maps those variables to Gravity UI design tokens (`--g-color-*`, `--g-spacing-*`, …)
 

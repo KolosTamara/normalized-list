@@ -1,0 +1,11 @@
+@use '../../../../variables';
+$ns: variables.$ns;
+
+$block: '.#{$ns}fallback-normalized-select-error';
+
+#{$block} {
+    margin-block-start: 4px;
+    color: #e9033a;
+    font-size: 13px;
+    line-height: 16px;
+}
