@@ -15,8 +15,8 @@ import type {
 
 import {getSelectedOptionsContent} from '../getSelectedOptionsContent';
 import {renderUIKitListItem} from '../renderUIKitListItem';
-import {NormalizedSelectControl} from '../NormalizedSelectControl';
-import {NormalizedSelectPopup} from '../NormalizedSelectPopup';
+import {UIKitNormalizedSelectControl} from '../UIKitNormalizedSelectControl';
+import {UIKitNormalizedSelectPopup} from '../UIKitNormalizedSelectPopup';
 
 export type UIKitNormalizedSelectProps<T, P extends {} = {}> = NormalizedSelectProps<T, P>;
 
@@ -41,7 +41,7 @@ export const UIKitNormalizedSelect = React.forwardRef(function UIKitNormalizedSe
     const renderControl =
         propsRenderControl ??
         ((controlProps: NormalizedSelectRenderControlProps<T>) => (
-            <NormalizedSelectControl
+            <UIKitNormalizedSelectControl
                 {...controlProps}
                 selectedOptionsContent={getSelectedOptionsContent(
                     controlProps,
@@ -53,7 +53,7 @@ export const UIKitNormalizedSelect = React.forwardRef(function UIKitNormalizedSe
     const renderPopup =
         propsRenderPopup ??
         ((popupProps: NormalizedSelectRenderPopupProps) => (
-            <NormalizedSelectPopup {...popupProps} />
+            <UIKitNormalizedSelectPopup {...popupProps} />
         ));
 
     const renderError =

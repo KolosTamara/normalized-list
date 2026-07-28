@@ -4,23 +4,23 @@ import {Icon} from '@gravity-ui/uikit';
 import type {ListItemSize} from '../../components/useNormalizedList';
 import {block} from '../../components/utils/cn';
 
-import './NormalizedSelectClear.scss';
+import './UIKitNormalizedSelectClear.scss';
 
 const b = block('normalized-select-control-clear');
 
-export type NormalizedSelectClearProps = {
+export type UIKitNormalizedSelectClearProps = {
     size: ListItemSize;
     onClick: () => void;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
 };
 
-export const NormalizedSelectClear = ({
+export const UIKitNormalizedSelectClear = ({
     size,
     onClick,
     onMouseEnter,
     onMouseLeave,
-}: NormalizedSelectClearProps) => {
+}: UIKitNormalizedSelectClearProps) => {
     return (
         <button
             type="button"

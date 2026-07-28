@@ -10,7 +10,7 @@ import {block} from '../../components/utils/cn';
 
 import {getMiddlewares} from './middlewares';
 
-import './NormalizedSelectPopup.scss';
+import './UIKitNormalizedSelectPopup.scss';
 
 const b = block('normalized-select-popup');
 
@@ -21,9 +21,9 @@ const DEFAULT_PLACEMENT: NormalizedSelectPopupPlacement = [
     'top-end',
 ];
 
-export type NormalizedSelectPopupProps = NormalizedSelectRenderPopupProps;
+export type UIKitNormalizedSelectPopupProps = NormalizedSelectRenderPopupProps;
 
-export const NormalizedSelectPopup = ({
+export const UIKitNormalizedSelectPopup = ({
     open,
     onClose,
     anchorRef,
@@ -34,7 +34,7 @@ export const NormalizedSelectPopup = ({
     width,
     placement = DEFAULT_PLACEMENT,
     disablePortal,
-}: NormalizedSelectPopupProps) => {
+}: UIKitNormalizedSelectPopupProps) => {
     return (
         <Popup
             className={b(null, className)}

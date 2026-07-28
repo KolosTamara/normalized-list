@@ -7,13 +7,16 @@ import {Alert, Icon, Popover, useDirection} from '@gravity-ui/uikit';
 
 import type {NormalizedSelectRenderControlProps} from '../../components/NormalizedSelect/types';
 import {block} from '../../components/utils/cn';
-import {NormalizedSelectClear} from '../NormalizedSelectClear';
+import {UIKitNormalizedSelectClear} from '../UIKitNormalizedSelectClear';
 
-import './NormalizedSelectControl.scss';
+import './UIKitNormalizedSelectControl.scss';
 
 const b = block('normalized-select-control');
 
-export type NormalizedSelectControlProps<T> = Omit<NormalizedSelectRenderControlProps<T>, 'ref'> & {
+export type UIKitNormalizedSelectControlProps<T> = Omit<
+    NormalizedSelectRenderControlProps<T>,
+    'ref'
+> & {
     selectedOptionsContent: React.ReactNode;
 };
 
@@ -21,7 +24,9 @@ export type NormalizedSelectControlProps<T> = Omit<NormalizedSelectRenderControl
  * UIKit NormalizedSelect control matching Gravity UI Select control layout
  * with a dedicated BEM block and public UIKit SCSS mixins.
  */
-export const NormalizedSelectControl = React.forwardRef(function NormalizedSelectControl<T>(
+export const UIKitNormalizedSelectControl = React.forwardRef(function UIKitNormalizedSelectControl<
+    T,
+>(
     {
         open,
         toggleOpen,
@@ -36,7 +41,7 @@ export const NormalizedSelectControl = React.forwardRef(function NormalizedSelec
         hasClear,
         errorMessage,
         isErrorVisible,
-    }: NormalizedSelectControlProps<T>,
+    }: UIKitNormalizedSelectControlProps<T>,
     ref: React.Ref<HTMLButtonElement>,
 ) {
     const direction = useDirection();
@@ -100,7 +105,7 @@ export const NormalizedSelectControl = React.forwardRef(function NormalizedSelec
             </button>
 
             {showClear && (
-                <NormalizedSelectClear
+                <UIKitNormalizedSelectClear
                     size={size}
                     onClick={handleClearClick}
                     onMouseEnter={() => setIsDisabledButtonAnimation(true)}
@@ -135,5 +140,5 @@ export const NormalizedSelectControl = React.forwardRef(function NormalizedSelec
         </div>
     );
 }) as <T>(
-    props: NormalizedSelectControlProps<T> & {ref?: React.Ref<HTMLButtonElement>},
+    props: UIKitNormalizedSelectControlProps<T> & {ref?: React.Ref<HTMLButtonElement>},
 ) => React.ReactElement;

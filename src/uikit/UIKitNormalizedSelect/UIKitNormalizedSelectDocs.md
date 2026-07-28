@@ -50,7 +50,7 @@ You can customize the same things as core [`NormalizedSelect`](/docs/lab-normali
 />
 ```
 
-UIKit defaults: [`NormalizedSelectControl`](/docs/lab-uikit-treeselectcontrol--docs) and [`NormalizedSelectPopup`](#treeselectpopup).
+UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/lab-uikit-uikitnormalizedselectcontrol--docs) and [`UIKitNormalizedSelectPopup`](#uikitnormalizedselectpopup).
 
 ### List item and container
 
@@ -63,14 +63,14 @@ UIKit defaults: [`NormalizedSelectControl`](/docs/lab-uikit-treeselectcontrol--d
 />
 ```
 
-## `NormalizedSelectPopup`
+## `UIKitNormalizedSelectPopup`
 
 Gravity UI `Popup` wrapper implementing `NormalizedSelect`’s `renderPopup` contract (placement, width middlewares, `returnFocus` to the control).
 
 ```tsx
-import {NormalizedSelectPopup} from '@gravity-ui/tree-select/uikit';
+import {UIKitNormalizedSelectPopup} from '@gravity-ui/tree-select/uikit';
 
-renderPopup={(props) => <NormalizedSelectPopup {...props} />}
+renderPopup={(props) => <UIKitNormalizedSelectPopup {...props} />}
 ```
 
 CSS block: `.g-nl-normalized-select-popup` with `max-height: 90vh` and flex column layout (list scrolls inside).

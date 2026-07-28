@@ -1,9 +1,9 @@
-export {NormalizedSelectControl} from './NormalizedSelectControl';
-export type {NormalizedSelectControlProps} from './NormalizedSelectControl';
-export {NormalizedSelectClear} from './NormalizedSelectClear';
-export type {NormalizedSelectClearProps} from './NormalizedSelectClear';
-export {NormalizedSelectPopup} from './NormalizedSelectPopup';
-export type {NormalizedSelectPopupProps} from './NormalizedSelectPopup';
+export {UIKitNormalizedSelectControl} from './UIKitNormalizedSelectControl';
+export type {UIKitNormalizedSelectControlProps} from './UIKitNormalizedSelectControl';
+export {UIKitNormalizedSelectClear} from './UIKitNormalizedSelectClear';
+export type {UIKitNormalizedSelectClearProps} from './UIKitNormalizedSelectClear';
+export {UIKitNormalizedSelectPopup} from './UIKitNormalizedSelectPopup';
+export type {UIKitNormalizedSelectPopupProps} from './UIKitNormalizedSelectPopup';
 export {getSelectedOptionsContent} from './getSelectedOptionsContent';
 export {UIKitListItemView} from './UIKitListItemView';
 export {UIKitListItemViewContent} from './UIKitListItemViewContent';

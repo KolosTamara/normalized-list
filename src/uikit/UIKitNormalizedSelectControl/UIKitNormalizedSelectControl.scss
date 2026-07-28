@@ -1,6 +1,6 @@
 @use '@gravity-ui/uikit/styles/mixins';
 @use '../../components/variables';
-@use '../NormalizedSelectClear/NormalizedSelectClear.scss' as select-clear;
+@use '../UIKitNormalizedSelectClear/UIKitNormalizedSelectClear.scss' as select-clear;
 @use '../variables' as sizes;
 
 $ns: variables.$ns;
