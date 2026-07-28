@@ -1,6 +1,7 @@
 @use '../../../variables';
+$ns: variables.$ns;
 
-$block: '.#{variables.$ns}list-recursive-renderer';
+$block: '.#{$ns}list-recursive-renderer';
 
 #{$block} {
     padding: 0;

@@ -1,9 +1,9 @@
 import type {QAProps} from '../../types';
-import type {ListItemViewCommonProps} from '../components/ListItemView';
 import type {
     ListItemId,
     ListItemListContextProps,
     ListItemSize,
+    ListItemViewCommonProps,
     ListItemViewContentType,
     ListOnItemClick,
     UseListResult,

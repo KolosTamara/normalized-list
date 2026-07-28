@@ -1,0 +1,12 @@
+@use '../../components/variables';
+$ns: variables.$ns;
+
+$block: '.#{$ns}list-item-view';
+
+#{$block}_theme-uikit {
+    --#{$ns}list-item-background-hover: var(--g-color-base-simple-hover);
+    --#{$ns}list-item-background-selected: var(--g-color-base-selection);
+    --#{$ns}list-item-background-dragging: var(--g-color-base-simple-hover-solid);
+
+    padding-inline: var(--g-spacing-2);
+}

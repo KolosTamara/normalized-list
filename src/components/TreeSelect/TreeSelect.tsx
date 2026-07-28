@@ -10,7 +10,9 @@ import type {ListOnItemClick} from '../useList';
 import {block} from '../utils/cn';
 import type {CnMods} from '../utils/cn';
 
-import {TreeSelectControl, TreeSelectError, TreeSelectPopup} from './components';
+import {FallbackTreeSelectControl} from './components/fallback/FallbackTreeSelectControl';
+import {FallbackTreeSelectError} from './components/fallback/FallbackTreeSelectError';
+import {FallbackTreeSelectPopup} from './components/fallback/FallbackTreeSelectPopup';
 import {useControlledValue} from './hooks/useControlledValue';
 import {useOpenState} from './hooks/useOpenState';
 import type {
@@ -191,7 +193,7 @@ export const TreeSelect = React.forwardRef(function TreeSelect<T, P extends {} =
     const togglerNode = renderControl ? (
         renderControl(controlProps)
     ) : (
-        <TreeSelectControl
+        <FallbackTreeSelectControl
             {...controlProps}
             selectedOptionsContent={value
                 .map((itemId) =>
@@ -245,7 +247,7 @@ export const TreeSelect = React.forwardRef(function TreeSelect<T, P extends {} =
     const popupNode = renderPopup ? (
         renderPopup(popupProps)
     ) : (
-        <TreeSelectPopup {...defaultPopupProps} />
+        <FallbackTreeSelectPopup {...defaultPopupProps} />
     );
 
     const errorProps: TreeSelectRenderErrorProps | null = isErrorMsgVisible
@@ -257,9 +259,9 @@ export const TreeSelect = React.forwardRef(function TreeSelect<T, P extends {} =
 
     const errorNode = errorProps
         ? (renderError?.(errorProps) ?? (
-              <TreeSelectError id={errorProps.errorMessageId}>
+              <FallbackTreeSelectError id={errorProps.errorMessageId}>
                   {errorProps.errorMessage}
-              </TreeSelectError>
+              </FallbackTreeSelectError>
           ))
         : null;
 

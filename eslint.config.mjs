@@ -33,4 +33,55 @@ export default defineConfig([
             },
         },
     },
+    {
+        // Core must stay UIKit-agnostic. UIKit usage belongs in src/uikit (and stories).
+        files: ['src/components/**/*.{ts,tsx}', 'src/hooks/**/*.{ts,tsx}'],
+        ignores: ['src/components/**/__stories__/**'],
+        rules: {
+            'no-restricted-imports': [
+                'error',
+                {
+                    paths: [
+                        {
+                            name: '@gravity-ui/uikit',
+                            message:
+                                'Core code must not depend on @gravity-ui/uikit. Put UIKit-dependent code in src/uikit.',
+                        },
+                    ],
+                    patterns: [
+                        {
+                            group: ['@gravity-ui/uikit/*'],
+                            message:
+                                'Core code must not depend on @gravity-ui/uikit. Put UIKit-dependent code in src/uikit.',
+                        },
+                        {
+                            // Relative imports to src/uikit only (does not match @gravity-ui/uikit).
+                            regex: '^(\\.\\./)+uikit(/.*)?$',
+                            message:
+                                'Do not import the UIKit layer from core. Use src/uikit only from the uikit entry or stories.',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
+    {
+        // Fallback UI is internal — do not re-export it from public barrels.
+        files: ['src/index.ts', 'src/components/*/index.ts'],
+        rules: {
+            'no-restricted-imports': [
+                'error',
+                {
+                    patterns: [
+                        {
+                            // Matches import and export-from of fallback modules.
+                            regex: '(^|/)fallback(/|$)',
+                            message:
+                                'Do not re-export fallback UI from the public API. Keep fallback internal; export types/render props instead.',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
 ]);

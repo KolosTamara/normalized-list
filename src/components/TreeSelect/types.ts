@@ -19,7 +19,7 @@ type AutoPlacement = 'auto' | 'auto-start' | 'auto-end';
 /**
  * Popup placement options (same shape as uikit `PopupPlacement`).
  * Full set is intended for custom `renderPopup` (e.g. Floating UI);
- * the default `TreeSelectPopup` supports a simplified subset.
+ * the default `FallbackTreeSelectPopup` supports a simplified subset.
  */
 export type TreeSelectPopupPlacement = AutoPlacement | FloatingPlacement | FloatingPlacement[];
 
@@ -135,7 +135,6 @@ export interface TreeSelectProps<T, P extends {} = {}>
     renderPopup?(props: TreeSelectRenderPopupProps): React.JSX.Element;
     /**
      * Ability to override outside error message rendering.
-     * Default: plain `TreeSelectError` fallback.
      */
     renderError?(props: TreeSelectRenderErrorProps): React.ReactNode;
     renderContainer?: TreeSelectRenderContainer<T>;

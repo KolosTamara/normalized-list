@@ -17,7 +17,7 @@ export interface ListContainerViewProps extends QAProps {
     className?: string;
     style?: React.CSSProperties;
     /**
-     * Removes `overflow: auto` from container and set fixed container size (300px)
+     * Removes `overflow: auto` from container and set fixed container size (var(--g-ts-list-container-height) or 300px)
      */
     fixedHeight?: boolean;
     children: React.ReactNode;
