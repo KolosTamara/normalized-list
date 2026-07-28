@@ -1,6 +1,6 @@
 ### ListItemView
 
-Structural row shell for list items. Full docs: [`ListItemView`](/docs/lab-usenormalizedlist-listitemview--docs).
+Structural row shell for list items. Full docs: [`ListItemView`](/docs/normalized-list-usenormalizedlist-listitemview--docs).
 
 ```tsx
 import {ListItemView} from '@gravity-ui/normalized-list';

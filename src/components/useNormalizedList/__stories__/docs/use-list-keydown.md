@@ -2,7 +2,7 @@
 
 Keyboard support for tree/list containers (arrow up/down, Enter/Space).
 
-[`NormalizedList`](/docs/lab-normalizedlist--docs) already wires this — call it only in custom list shells.
+[`NormalizedList`](/docs/normalized-list-normalizedlist--docs) already wires this — call it only in custom list shells.
 
 #### Props:
 

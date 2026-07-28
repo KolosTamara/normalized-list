@@ -2,7 +2,7 @@
 
 Renders a tree node and its children while preserving nested HTML (`ul` / group role). Respects `expandedById`.
 
-Usually you do not need this unless you reimplement [`ListContainer`](/docs/lab-usenormalizedlist-listcontainer--docs).
+Usually you do not need this unless you reimplement [`ListContainer`](/docs/normalized-list-usenormalizedlist-listcontainer--docs).
 
 #### Props:
 

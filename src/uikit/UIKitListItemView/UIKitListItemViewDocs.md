@@ -1,6 +1,6 @@
 # UIKitListItemView
 
-[ListItemView](/docs/lab-usenormalizedlist-listitemview--docs) with Gravity UI theme modifier (`_theme-uikit`): maps `--g-nl-list-item-*` variables to `--g-color-*` tokens.
+[ListItemView](/docs/normalized-list-usenormalizedlist-listitemview--docs) with Gravity UI theme modifier (`_theme-uikit`): maps `--g-nl-list-item-*` variables to `--g-color-*` tokens.
 
 ## Usage
 
@@ -15,7 +15,7 @@ import {UIKitListItemView, UIKitListItemViewContent} from '@gravity-ui/normalize
 />;
 ```
 
-Same props as core [`ListItemView`](/docs/lab-usenormalizedlist-listitemview--docs). Prefer [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) / [`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalizedlist--docs) unless you need a custom composition.
+Same props as core [`ListItemView`](/docs/normalized-list-usenormalizedlist-listitemview--docs). Prefer [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) / [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) unless you need a custom composition.
 
 ## `UIKitListItemViewContent`
 
@@ -37,4 +37,4 @@ import {UIKitListItemViewContent, UIKitListItemExpandIcon} from '@gravity-ui/nor
 />;
 ```
 
-Pass as `content` to `UIKitListItemView` / [`ListItemView`](/docs/lab-usenormalizedlist-listitemview--docs), or rely on [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs), which wires this automatically.
+Pass as `content` to `UIKitListItemView` / [`ListItemView`](/docs/normalized-list-usenormalizedlist-listitemview--docs), or rely on [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs), which wires this automatically.

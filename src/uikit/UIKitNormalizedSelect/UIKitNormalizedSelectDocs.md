@@ -1,6 +1,6 @@
 # UIKitNormalizedSelect
 
-[`NormalizedSelect`](/docs/lab-normalizedselect--docs) with Gravity UI defaults for control, popup, list item ([`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs)), and outside error text.
+[`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with Gravity UI defaults for control, popup, list item ([`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs)), and outside error text.
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
 
@@ -29,11 +29,11 @@ export function Example() {
 }
 ```
 
-Prop descriptions match core NormalizedSelect — see [`NormalizedSelect` docs](/docs/lab-normalizedselect--docs) / [Important props](/docs/lab-normalizedselect--docs#important-props).
+Prop descriptions match core NormalizedSelect — see [`NormalizedSelect` docs](/docs/normalized-list-normalizedselect--docs) / [Important props](/docs/normalized-list-normalizedselect--docs#important-props).
 
 ## Customization
 
-You can customize the same things as core [`NormalizedSelect`](/docs/lab-normalizedselect--docs#customization): control, popup, error, list item, container, and slots before/after the list.
+You can customize the same things as core [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs#customization): control, popup, error, list item, container, and slots before/after the list.
 
 ### Control / popup / error
 
@@ -50,7 +50,7 @@ You can customize the same things as core [`NormalizedSelect`](/docs/lab-normali
 />
 ```
 
-UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/lab-uikit-uikitnormalizedselectcontrol--docs) and [`UIKitNormalizedSelectPopup`](#uikitnormalizedselectpopup).
+UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/normalized-list-uikit-uikitnormalizedselectcontrol--docs) and [`UIKitNormalizedSelectPopup`](#uikitnormalizedselectpopup).
 
 ### List item and container
 
@@ -88,4 +88,4 @@ Same as core `NormalizedSelect`: `value` is a list of **item ids**. Without `get
 />
 ```
 
-See [`NormalizedSelect` docs](/docs/lab-normalizedselect--docs#getitemid-and-value) for the full explanation.
+See [`NormalizedSelect` docs](/docs/normalized-list-normalizedselect--docs#getitemid-and-value) for the full explanation.

@@ -24,7 +24,7 @@ const a11yBasic = {
 };
 
 export default {
-    title: 'Lab/UIKit/UIKitNormalizedSelect',
+    title: 'normalized-list/UIKit/UIKitNormalizedSelect',
     component: UIKitNormalizedSelect,
 } as Meta;
 

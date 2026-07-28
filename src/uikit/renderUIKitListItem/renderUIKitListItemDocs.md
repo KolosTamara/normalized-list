@@ -1,6 +1,6 @@
 # renderUIKitListItem
 
-Default `renderItem` for [`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/lab-uikit-uikitnormalizedselect--docs): composes [`UIKitListItemView`](/docs/lab-uikit-uikitlistitemview--docs) + [`UIKitListItemViewContent`](/docs/lab-uikit-uikitlistitemview--docs#uikitlistitemviewcontent) + [`UIKitListItemExpandIcon`](/docs/lab-uikit-uikitlistitemexpandicon--docs).
+Default `renderItem` for [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs): composes [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs) + [`UIKitListItemViewContent`](/docs/normalized-list-uikit-uikitlistitemview--docs#uikitlistitemviewcontent) + [`UIKitListItemExpandIcon`](/docs/normalized-list-uikit-uikitlistitemexpandicon--docs).
 
 ## Usage
 
@@ -15,7 +15,7 @@ import {renderUIKitListItem} from '@gravity-ui/normalized-list/uikit';
 />;
 ```
 
-[`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalizedlist--docs) already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
+[`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
 
 ```tsx
 renderItem={(args) => {

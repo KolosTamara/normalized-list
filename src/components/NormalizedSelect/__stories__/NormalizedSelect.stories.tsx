@@ -18,7 +18,7 @@ const a11yBasic = {
 };
 
 export default {
-    title: 'Lab/NormalizedSelect',
+    title: 'normalized-list/NormalizedSelect',
     component: NormalizedSelect,
 } as Meta;
 

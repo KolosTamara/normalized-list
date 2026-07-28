@@ -1,6 +1,6 @@
 # UIKitNormalizedSelectControl
 
-Gravity UI–styled select control for `NormalizedSelect` / [`UIKitNormalizedSelect`](/docs/lab-uikit-uikitnormalizedselect--docs) (`renderControl`).
+Gravity UI–styled select control for `NormalizedSelect` / [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs) (`renderControl`).
 
 ## Usage
 

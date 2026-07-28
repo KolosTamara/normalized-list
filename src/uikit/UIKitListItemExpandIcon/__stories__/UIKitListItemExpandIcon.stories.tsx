@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 import {UIKitListItemExpandIcon} from '../UIKitListItemExpandIcon';
 
 export default {
-    title: 'Lab/UIKit/UIKitListItemExpandIcon',
+    title: 'normalized-list/UIKit/UIKitListItemExpandIcon',
     component: UIKitListItemExpandIcon,
 } as Meta<typeof UIKitListItemExpandIcon>;
 

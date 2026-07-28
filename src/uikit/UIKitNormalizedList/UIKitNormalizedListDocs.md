@@ -1,6 +1,6 @@
 # UIKitNormalizedList
 
-[`NormalizedList`](/docs/lab-normalizedlist--docs) with default `renderItem` set to [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) (Gravity UI list row).
+[`NormalizedList`](/docs/normalized-list-normalizedlist--docs) with default `renderItem` set to [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) (Gravity UI list row).
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
 
@@ -21,4 +21,4 @@ const list = useNormalizedList({items});
 />;
 ```
 
-Prop descriptions match core NormalizedList — see [`NormalizedList` Props](/docs/lab-normalizedlist--docs#props).
+Prop descriptions match core NormalizedList — see [`NormalizedList` Props](/docs/normalized-list-normalizedlist--docs#props).

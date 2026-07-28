@@ -5,7 +5,7 @@ import {NormalizedList} from '../NormalizedList';
 import {DefaultStory} from './DefaultStory';
 
 export default {
-    title: 'Lab/NormalizedList',
+    title: 'normalized-list/NormalizedList',
     component: NormalizedList,
     parameters: {
         a11y: {

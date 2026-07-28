@@ -4,7 +4,7 @@ The basic component for selecting from lists, including tree-like. Supports cont
 
 It's supplied with a default UI for demos and exploration. For production, prefer supplying your own UI blocks — see [Customization](#customization).
 
-For Gravity UI use [UIKitNormalizedSelect](/docs/lab-uikit-uikitnormalizedselect--docs).
+For Gravity UI use [UIKitNormalizedSelect](/docs/normalized-list-uikit-uikitnormalizedselect--docs).
 
 ## Basic usage
 

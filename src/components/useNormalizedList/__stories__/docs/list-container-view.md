@@ -1,6 +1,6 @@
 ### ListContainerView
 
-Presentational listbox shell. Also documented under [`ListContainer`](/docs/lab-usenormalizedlist-listcontainer--docs#listcontainerview).
+Presentational listbox shell. Also documented under [`ListContainer`](/docs/normalized-list-usenormalizedlist-listcontainer--docs#listcontainerview).
 
 #### Props:
 
@@ -25,4 +25,4 @@ const containerRef = React.useRef<HTMLDivElement>(null);
 </ListContainerView>;
 ```
 
-For a ready-made recursive walk of `list.structure`, prefer [`ListContainer`](/docs/lab-usenormalizedlist-listcontainer--docs).
+For a ready-made recursive walk of `list.structure`, prefer [`ListContainer`](/docs/normalized-list-usenormalizedlist-listcontainer--docs).

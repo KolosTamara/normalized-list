@@ -2,7 +2,7 @@
 
 Structural row shell for tree/list items: size, selection, active/hover, disabled, dragging. Provided with neutral default visuals, theme or replace for production.
 
-For Gravity UI use theme wrapper: [UIKitListItemView](/docs/lab-uikit-uikitlistitemview--docs) from `@gravity-ui/normalized-list/uikit`.
+For Gravity UI use theme wrapper: [UIKitListItemView](/docs/normalized-list-uikit-uikitlistitemview--docs) from `@gravity-ui/normalized-list/uikit`.
 
 ## Basic usage
 
@@ -41,6 +41,6 @@ Classes use namespace `g-nl-`. Override variables on `.g-nl-list-item-view` or a
 
 ## Related
 
-Default row renderer inside [`NormalizedList`](/docs/lab-normalizedlist--docs) / [`NormalizedSelect`](/docs/lab-normalizedselect--docs). Prefer `renderItem` for a fully custom row — see [NormalizedList Customization](/docs/lab-normalizedlist--docs#customization) and [NormalizedSelect Customization](/docs/lab-normalizedselect--docs#customization).
+Default row renderer inside [`NormalizedList`](/docs/normalized-list-normalizedlist--docs) / [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs). Prefer `renderItem` for a fully custom row — see [NormalizedList Customization](/docs/normalized-list-normalizedlist--docs#customization) and [NormalizedSelect Customization](/docs/normalized-list-normalizedselect--docs#customization).
 
-UIKit row: [`UIKitListItemView`](/docs/lab-uikit-uikitlistitemview--docs).
+UIKit row: [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs).

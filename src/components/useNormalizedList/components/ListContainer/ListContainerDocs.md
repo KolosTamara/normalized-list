@@ -1,6 +1,6 @@
 # ListContainer
 
-Default non-virtualized tree container for [NormalizedList](/docs/lab-normalizedlist--docs) / [NormalizedSelect](/docs/lab-normalizedselect--docs): walks `list.structure` and renders items recursively, wrapped in [`ListContainerView`](#listcontainerview).
+Default non-virtualized tree container for [NormalizedList](/docs/normalized-list-normalizedlist--docs) / [NormalizedSelect](/docs/normalized-list-normalizedselect--docs): walks `list.structure` and renders items recursively, wrapped in [`ListContainerView`](#listcontainerview).
 
 ## Usage
 
@@ -18,7 +18,7 @@ const list = useNormalizedList({items});
 />;
 ```
 
-For production overrides (virtualization, DnD, empty states), use `renderContainer` on [`NormalizedList`](/docs/lab-normalizedlist--docs#customization) or [`NormalizedSelect`](/docs/lab-normalizedselect--docs#customization).
+For production overrides (virtualization, DnD, empty states), use `renderContainer` on [`NormalizedList`](/docs/normalized-list-normalizedlist--docs#customization) or [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs#customization).
 
 ## `ListContainerView`
 

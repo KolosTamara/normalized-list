@@ -4,7 +4,7 @@ import {UIKitListItemView} from '../UIKitListItemView';
 import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 
 export default {
-    title: 'Lab/UIKit/UIKitListItemView',
+    title: 'normalized-list/UIKit/UIKitListItemView',
     component: UIKitListItemView,
 } as Meta<typeof UIKitListItemView>;
 

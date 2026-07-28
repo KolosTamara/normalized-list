@@ -69,7 +69,7 @@ The UIKit entry additionally maps those variables to Gravity UI design tokens (`
 
 ## Storybook
 
-Interactive examples live under **Lab** (core) and **Lab/UIKit**. Component docs are MDX pages (`*Docs.md`) next to each Storybook entry.
+Interactive examples live under **normalized-list** (core) and **normalized-list/UIKit**. Component docs are MDX pages (`*Docs.md`) next to each Storybook entry.
 
 ## License
 
