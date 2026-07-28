@@ -1,8 +1,10 @@
 # UIKitTreeSelect
 
-`TreeSelect` preset wired to Gravity UI: [`TreeSelectControl`](/docs/lab-uikit-treeselectcontrol--docs), [`TreeSelectPopup`](#customization-treeselectpopup), themed list items ([`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs)), and outside error text.
+[`TreeSelect`](/docs/lab-treeselect--docs) with Gravity UI defaults for control, popup, list item ([`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs)), and outside error text.
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
+
+There are many usage patterns for this component — see the Storybook stories alongside these docs.
 
 ## Basic usage
 
@@ -27,18 +29,41 @@ export function Example() {
 }
 ```
 
-Props match core [`TreeSelect`](/docs/lab-treeselect--docs). Override any renderer when needed:
+Prop descriptions match core TreeSelect — see [`TreeSelect` docs](/docs/lab-treeselect--docs) / [Important props](/docs/lab-treeselect--docs#important-props).
+
+## Customization
+
+You can customize the same things as core [`TreeSelect`](/docs/lab-treeselect--docs#customization): control, popup, error, list item, container, and slots before/after the list.
+
+### Control / popup / error
 
 ```tsx
 <UIKitTreeSelect
-  renderControl={(props) => <TreeSelectControl {...props} selectedOptionsContent="…" />}
-  renderPopup={(props) => <TreeSelectPopup {...props} />}
-  renderItem={customRenderItem}
-  renderError={({errorMessage, errorMessageId}) => <span id={errorMessageId}>{errorMessage}</span>}
+  renderControl={(props) => <MyControl {...props} />}
+  renderPopup={(props) => <MyPopup {...props} />}
+  renderError={({errorMessage, errorMessageId}) => (
+    <div id={errorMessageId} role="alert">
+      {errorMessage}
+    </div>
+  )}
+  {/* ... */}
 />
 ```
 
-## Customization: `TreeSelectPopup`
+UIKit defaults: [`TreeSelectControl`](/docs/lab-uikit-treeselectcontrol--docs) and [`TreeSelectPopup`](#treeselectpopup).
+
+### List item and container
+
+```tsx
+<UIKitTreeSelect
+  renderItem={({props, renderContainerProps}) => <MyRow {...props} {...renderContainerProps} />}
+  renderContainer={(containerProps) => <ListContainer {...containerProps} fixedHeight />}
+  slotBeforeListBody={<MyFilter />}
+  slotAfterListBody={<MyFooter />}
+/>
+```
+
+## `TreeSelectPopup`
 
 Gravity UI `Popup` wrapper implementing `TreeSelect`’s `renderPopup` contract (placement, width middlewares, `returnFocus` to the control).
 
@@ -47,8 +72,6 @@ import {TreeSelectPopup} from '@gravity-ui/tree-select/uikit';
 
 renderPopup={(props) => <TreeSelectPopup {...props} />}
 ```
-
-Props are `TreeSelectRenderPopupProps` (`open`, `onClose`, `anchorRef`, `controlRef`, `children`, `width`, `placement`, `disablePortal`, …).
 
 CSS block: `.g-ts-tree-select-popup` with `max-height: 90vh` and flex column layout (list scrolls inside).
 
@@ -66,7 +89,3 @@ Same as core `TreeSelect`: `value` is a list of **item ids**. Without `getItemId
 ```
 
 See [`TreeSelect` docs](/docs/lab-treeselect--docs#getitemid-and-value) for the full explanation.
-
-## Related bricks
-
-[`TreeSelectControl`](/docs/lab-uikit-treeselectcontrol--docs) (includes [`getSelectedOptionsContent`](/docs/lab-uikit-treeselectcontrol--docs#getselectedoptionscontent)), [`TreeListItemView`](/docs/lab-uikit-treelistitemview--docs), [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) — same `@gravity-ui/tree-select/uikit` entry.

@@ -3,7 +3,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 import {ListItemView} from '../ListItemView';
 
 export default {
-    title: 'Lab/ListItemView',
+    title: 'Lab/useList/ListItemView',
     component: ListItemView,
 } as Meta<typeof ListItemView>;
 

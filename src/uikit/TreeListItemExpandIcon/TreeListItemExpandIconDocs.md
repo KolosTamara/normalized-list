@@ -2,6 +2,8 @@
 
 Expand/collapse control for tree groups, built with Gravity UI `ArrowToggle`.
 
+Used as default `renderExpandIcon` inside `TreeListItemViewContent` / `renderUIKitListItem`.
+
 ## Usage
 
 ```tsx
@@ -10,4 +12,10 @@ import {TreeListItemExpandIcon} from '@gravity-ui/tree-select/uikit';
 <TreeListItemExpandIcon expanded={expanded} behavior="state" />;
 ```
 
-`behavior`: `state` (reflects expanded) or `action` (always points to the expand affordance). Used as default `renderExpandIcon` inside `TreeListItemViewContent` / `renderUIKitListItem`.
+## Props
+
+| Name     | Description                   | Type                                   | Default  |
+| :------- | :---------------------------- | :------------------------------------- | :------: |
+| expanded | Icon state                    | `boolean`                              |          |
+| disabled | Disabled view type            | `boolean`                              |          |
+| behavior | The behavior of the component | `state` \| `state-inverse` \| `action` | `action` |

@@ -1,6 +1,6 @@
 # TreeListItemView
 
-`ListItemView` with Gravity UI theme modifier (`_theme-uikit`): maps `--g-ts-list-item-*` variables to `--g-color-*` tokens.
+[ListItemView](/docs/lab-uselist-listitemview--docs) with Gravity UI theme modifier (`_theme-uikit`): maps `--g-ts-list-item-*` variables to `--g-color-*` tokens.
 
 ## Usage
 
@@ -15,7 +15,7 @@ import {TreeListItemView, TreeListItemViewContent} from '@gravity-ui/tree-select
 />;
 ```
 
-Same props as core [`ListItemView`](/docs/lab-listitemview--docs). Prefer [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) / [`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) unless you need a custom composition.
+Same props as core [`ListItemView`](/docs/lab-uselist-listitemview--docs). Prefer [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) / [`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) unless you need a custom composition.
 
 ## `TreeListItemViewContent`
 
@@ -37,4 +37,4 @@ import {TreeListItemViewContent, TreeListItemExpandIcon} from '@gravity-ui/tree-
 />;
 ```
 
-Pass as `content` to `TreeListItemView` / `ListItemView`, or rely on `renderUIKitListItem`, which wires this automatically.
+Pass as `content` to `TreeListItemView` / [`ListItemView`](/docs/lab-uselist-listitemview--docs), or rely on [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs), which wires this automatically.

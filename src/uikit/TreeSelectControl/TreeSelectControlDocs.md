@@ -20,7 +20,7 @@ renderControl={(controlProps) => (
 
 Accepts `TreeSelectRenderControlProps` plus required `selectedOptionsContent`. When `hasClear` is set and there is a value, a clear (×) button is rendered inside the control.
 
-CSS block: `.g-ts-tree-select-control` (does not collide with uikit `.g-select-control`).
+CSS block: `.g-ts-tree-select-control`.
 
 ## `getSelectedOptionsContent`
 

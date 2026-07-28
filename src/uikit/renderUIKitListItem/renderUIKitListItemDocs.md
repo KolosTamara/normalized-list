@@ -1,6 +1,6 @@
 # renderUIKitListItem
 
-Default `renderItem` for `UIKitTreeList` / `UIKitTreeSelect`: composes `TreeListItemView` + `TreeListItemViewContent` + `TreeListItemExpandIcon`.
+Default `renderItem` for [`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) / [`UIKitTreeSelect`](/docs/lab-uikit-uikittreeselect--docs): composes [`TreeListItemView`](/docs/lab-uikit-treelistitemview--docs) + [`TreeListItemViewContent`](/docs/lab-uikit-treelistitemview--docs#treelistitemviewcontent) + [`TreeListItemExpandIcon`](/docs/lab-uikit-treelistitemexpandicon--docs).
 
 ## Usage
 
@@ -15,7 +15,7 @@ import {renderUIKitListItem} from '@gravity-ui/tree-select/uikit';
 />;
 ```
 
-`UIKitTreeList` already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
+[`UIKitTreeList`](/docs/lab-uikit-uikittreelist--docs) already sets this as the default. Wrap or replace it when you need extra row chrome (links, actions, DnD handles) while keeping the UIKit look:
 
 ```tsx
 renderItem={(args) => {

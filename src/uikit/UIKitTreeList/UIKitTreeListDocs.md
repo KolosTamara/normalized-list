@@ -1,6 +1,10 @@
 # UIKitTreeList
 
-`TreeList` with default `renderItem` set to `renderUIKitListItem` (Gravity UI list row).
+[`TreeList`](/docs/lab-treelist--docs) with default `renderItem` set to [`renderUIKitListItem`](/docs/lab-uikit-renderuikitlistitem--docs) (Gravity UI list row).
+
+Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
+
+There are many usage patterns for this component — see the Storybook stories alongside these docs.
 
 ## Basic usage
 
@@ -13,4 +17,4 @@ const list = useList({items});
 <UIKitTreeList list={list} multiple mapItemDataToContentProps={(item) => ({title: item.title})} />;
 ```
 
-Pass your own `renderItem` / `renderContainer` to override the UIKit defaults while keeping the same list state API as core `TreeList`.
+Prop descriptions match core TreeList — see [`TreeList` Props](/docs/lab-treelist--docs#props).
