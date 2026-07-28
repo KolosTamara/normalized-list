@@ -3,7 +3,7 @@ import {Flex, Icon, Text, colorText} from '@gravity-ui/uikit';
 import type {FlexProps} from '@gravity-ui/uikit';
 
 import type {ListItemViewContentType} from '../../components/useNormalizedList';
-import {NormalizedListItemExpandIcon} from '../NormalizedListItemExpandIcon';
+import {UIKitListItemExpandIcon} from '../UIKitListItemExpandIcon';
 
 interface SlotProps extends FlexProps {
     indentation?: number;
@@ -26,13 +26,13 @@ const renderSafeIndentation = (indentation?: number) => {
     return null;
 };
 
-export interface NormalizedListItemViewContentProps extends ListItemViewContentType {
+export interface UIKitListItemViewContentProps extends ListItemViewContentType {
     selected?: boolean;
     disabled?: boolean;
     hasSelectionIcon: boolean;
 }
 
-export const NormalizedListItemViewContent = ({
+export const UIKitListItemViewContent = ({
     startSlot,
     subtitle,
     endSlot,
@@ -44,8 +44,8 @@ export const NormalizedListItemViewContent = ({
     selected,
     title,
     expandIconPlacement = 'start',
-    renderExpandIcon: RenderExpandIcon = NormalizedListItemExpandIcon,
-}: NormalizedListItemViewContentProps) => {
+    renderExpandIcon: RenderExpandIcon = UIKitListItemExpandIcon,
+}: UIKitListItemViewContentProps) => {
     const expandIconNode = isGroup ? (
         <RenderExpandIcon
             behavior={expandIconPlacement === 'start' ? 'state' : 'action'}

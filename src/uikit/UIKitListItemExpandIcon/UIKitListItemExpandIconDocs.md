@@ -1,15 +1,15 @@
-# NormalizedListItemExpandIcon
+# UIKitListItemExpandIcon
 
 Expand/collapse control for tree groups, built with Gravity UI `ArrowToggle`.
 
-Used as default `renderExpandIcon` inside `NormalizedListItemViewContent` / `renderUIKitListItem`.
+Used as default `renderExpandIcon` inside `UIKitListItemViewContent` / `renderUIKitListItem`.
 
 ## Usage
 
 ```tsx
-import {NormalizedListItemExpandIcon} from '@gravity-ui/tree-select/uikit';
+import {UIKitListItemExpandIcon} from '@gravity-ui/tree-select/uikit';
 
-<NormalizedListItemExpandIcon expanded={expanded} behavior="state" />;
+<UIKitListItemExpandIcon expanded={expanded} behavior="state" />;
 ```
 
 ## Props

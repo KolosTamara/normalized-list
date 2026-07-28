@@ -2,7 +2,7 @@
 
 Structural row shell for tree/list items: size, selection, active/hover, disabled, dragging. Provided with neutral default visuals, theme or replace for production.
 
-For Gravity UI use theme wrapper: [NormalizedListItemView](/docs/lab-uikit-normalizedlistitemview--docs) from `@gravity-ui/tree-select/uikit`.
+For Gravity UI use theme wrapper: [UIKitListItemView](/docs/lab-uikit-uikitlistitemview--docs) from `@gravity-ui/tree-select/uikit`.
 
 ## Basic usage
 
@@ -43,4 +43,4 @@ Classes use namespace `g-nl-`. Override variables on `.g-nl-list-item-view` or a
 
 Default row renderer inside [`NormalizedList`](/docs/lab-normalizedlist--docs) / [`NormalizedSelect`](/docs/lab-normalizedselect--docs). Prefer `renderItem` for a fully custom row — see [NormalizedList Customization](/docs/lab-normalizedlist--docs#customization) and [NormalizedSelect Customization](/docs/lab-normalizedselect--docs#customization).
 
-UIKit row: [`NormalizedListItemView`](/docs/lab-uikit-normalizedlistitemview--docs).
+UIKit row: [`UIKitListItemView`](/docs/lab-uikit-uikitlistitemview--docs).

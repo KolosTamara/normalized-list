@@ -1,14 +1,14 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
-import {NormalizedListItemView} from '../NormalizedListItemView';
-import {NormalizedListItemViewContent} from '../../NormalizedListItemViewContent';
+import {UIKitListItemView} from '../UIKitListItemView';
+import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 
 export default {
-    title: 'Lab/UIKit/NormalizedListItemView',
-    component: NormalizedListItemView,
-} as Meta<typeof NormalizedListItemView>;
+    title: 'Lab/UIKit/UIKitListItemView',
+    component: UIKitListItemView,
+} as Meta<typeof UIKitListItemView>;
 
-type Story = StoryObj<typeof NormalizedListItemView>;
+type Story = StoryObj<typeof UIKitListItemView>;
 
 export const Default: Story = {
     args: {
@@ -16,7 +16,7 @@ export const Default: Story = {
         size: 'l',
         selectionViewType: 'multiple',
         content: (
-            <NormalizedListItemViewContent
+            <UIKitListItemViewContent
                 title="Themed list item"
                 subtitle="UIKit theme"
                 hasSelectionIcon
@@ -29,6 +29,6 @@ export const Selected: Story = {
     args: {
         ...Default.args,
         selected: true,
-        content: <NormalizedListItemViewContent title="Selected" hasSelectionIcon selected />,
+        content: <UIKitListItemViewContent title="Selected" hasSelectionIcon selected />,
     },
 };

@@ -19,9 +19,9 @@ import type {
     NormalizedSelectRenderContainer,
     NormalizedSelectRenderItem,
 } from '../../../components/NormalizedSelect/types';
-import {NormalizedListItemExpandIcon} from '../../NormalizedListItemExpandIcon';
-import {NormalizedListItemView} from '../../NormalizedListItemView';
-import {NormalizedListItemViewContent} from '../../NormalizedListItemViewContent';
+import {UIKitListItemExpandIcon} from '../../UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../UIKitListItemView';
+import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 import type {UIKitNormalizedSelectProps} from '../UIKitNormalizedSelect';
 import {UIKitNormalizedSelect} from '../UIKitNormalizedSelect';
 
@@ -30,7 +30,7 @@ const DraggableListItem = ({
     ...props
 }: {provided?: DraggableProvided} & ListItemViewProps) => {
     return (
-        <NormalizedListItemView
+        <UIKitListItemView
             {...provided?.dragHandleProps}
             {...provided?.draggableProps}
             ref={provided?.innerRef}
@@ -141,14 +141,14 @@ export const WithDndListExample = (storyProps: WithDndListExampleProps) => {
             disabled,
             selectionViewType,
             content: (
-                <NormalizedListItemViewContent
+                <UIKitListItemViewContent
                     {...content}
                     title={data.someRandomKey}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
                     endSlot={<Icon data={Grip} size={16} />}
-                    renderExpandIcon={NormalizedListItemExpandIcon}
+                    renderExpandIcon={UIKitListItemExpandIcon}
                 />
             ),
         };

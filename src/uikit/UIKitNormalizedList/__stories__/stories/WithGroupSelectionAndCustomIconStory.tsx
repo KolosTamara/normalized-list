@@ -9,9 +9,9 @@ import {createRandomizedData} from '../../../../components/useNormalizedList/__s
 import {UIKitNormalizedList} from '../../../UIKitNormalizedList';
 import type {UIKitNormalizedListProps as NormalizedListProps} from '../../../UIKitNormalizedList';
 import {
-    NormalizedListItemExpandIcon,
-    NormalizedListItemView,
-    NormalizedListItemViewContent,
+    UIKitListItemExpandIcon,
+    UIKitListItemView,
+    UIKitListItemViewContent,
 } from '../../../../uikit';
 
 const expandButtonLabel = 'Expand';
@@ -76,11 +76,11 @@ export const WithGroupSelectionAndCustomIconStory = ({
                     const selectionViewType = props.multiple ? 'multiple' : 'single';
 
                     return (
-                        <NormalizedListItemView
+                        <UIKitListItemView
                             {...itemProps}
                             selectionViewType={selectionViewType}
                             content={
-                                <NormalizedListItemViewContent
+                                <UIKitListItemViewContent
                                     {...itemProps.content}
                                     isGroup={false}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
@@ -111,7 +111,7 @@ export const WithGroupSelectionAndCustomIconStory = ({
                                                 }
                                             >
                                                 <Button.Icon>
-                                                    <NormalizedListItemExpandIcon
+                                                    <UIKitListItemExpandIcon
                                                         expanded={itemProps.content.expanded}
                                                         behavior="action"
                                                     />

@@ -7,9 +7,9 @@ import {getListItemClickHandler} from '../../../components/useNormalizedList';
 import type {ListItemId} from '../../../components/useNormalizedList';
 import {IntersectionContainer} from '../../../components/useNormalizedList/__stories__/components/IntersectionContainer/IntersectionContainer';
 import {useInfinityFetch} from '../../../components/useNormalizedList/__stories__/utils/useInfinityFetch';
-import {NormalizedListItemExpandIcon} from '../../NormalizedListItemExpandIcon';
-import {NormalizedListItemView} from '../../NormalizedListItemView';
-import {NormalizedListItemViewContent} from '../../NormalizedListItemViewContent';
+import {UIKitListItemExpandIcon} from '../../UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../UIKitListItemView';
+import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 import {RenderVirtualizedContainer} from '../../UIKitNormalizedList/__stories__/components/RenderVirtualizedContainer';
 import type {UIKitNormalizedSelectProps} from '../UIKitNormalizedSelect';
 import {UIKitNormalizedSelect} from '../UIKitNormalizedSelect';
@@ -93,18 +93,18 @@ export const InfinityScrollExample = ({
                     const {content, selectionViewType, selected, disabled, ...shellProps} = props;
 
                     const node = (
-                        <NormalizedListItemView
+                        <UIKitListItemView
                             {...shellProps}
                             selected={selected}
                             disabled={disabled}
                             selectionViewType={selectionViewType}
                             content={
-                                <NormalizedListItemViewContent
+                                <UIKitListItemViewContent
                                     {...content}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
                                     selected={selected}
                                     disabled={disabled}
-                                    renderExpandIcon={NormalizedListItemExpandIcon}
+                                    renderExpandIcon={UIKitListItemExpandIcon}
                                     endSlot={
                                         childrenIds ? (
                                             <Label>{childrenIds.length}</Label>

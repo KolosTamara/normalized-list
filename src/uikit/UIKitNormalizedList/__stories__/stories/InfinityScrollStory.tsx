@@ -7,9 +7,9 @@ import {UIKitNormalizedList} from '../../../UIKitNormalizedList';
 import type {UIKitNormalizedListProps as NormalizedListProps} from '../../../UIKitNormalizedList';
 import {RenderVirtualizedContainer} from '../components/RenderVirtualizedContainer';
 import {
-    NormalizedListItemExpandIcon,
-    NormalizedListItemView,
-    NormalizedListItemViewContent,
+    UIKitListItemExpandIcon,
+    UIKitListItemView,
+    UIKitListItemViewContent,
 } from '../../../../uikit';
 
 interface Entity {
@@ -50,18 +50,18 @@ export const InfinityScrollStory = ({itemsCount = 3, ...storyProps}: InfinityScr
                     const {content, selectionViewType, selected, disabled, ...shellProps} = props;
 
                     const node = (
-                        <NormalizedListItemView
+                        <UIKitListItemView
                             {...shellProps}
                             selected={selected}
                             disabled={disabled}
                             selectionViewType={selectionViewType}
                             content={
-                                <NormalizedListItemViewContent
+                                <UIKitListItemViewContent
                                     {...content}
                                     hasSelectionIcon={selectionViewType === 'multiple'}
                                     selected={selected}
                                     disabled={disabled}
-                                    renderExpandIcon={NormalizedListItemExpandIcon}
+                                    renderExpandIcon={UIKitListItemExpandIcon}
                                     endSlot={
                                         childrenIds ? (
                                             <Label>{childrenIds.length}</Label>

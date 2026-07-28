@@ -6,9 +6,9 @@ import {Button, DropdownMenu, Flex, Icon} from '@gravity-ui/uikit';
 import type {ListItemId, UseNormalizedListResult} from '../../../components/useNormalizedList';
 import {createRandomizedData} from '../../../components/useNormalizedList/__stories__/utils/makeData';
 import type {NormalizedSelectRenderItem} from '../../../components/NormalizedSelect/types';
-import {NormalizedListItemExpandIcon} from '../../NormalizedListItemExpandIcon';
-import {NormalizedListItemView} from '../../NormalizedListItemView';
-import {NormalizedListItemViewContent} from '../../NormalizedListItemViewContent';
+import {UIKitListItemExpandIcon} from '../../UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../UIKitListItemView';
+import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 import type {UIKitNormalizedSelectProps} from '../UIKitNormalizedSelect';
 import {UIKitNormalizedSelect} from '../UIKitNormalizedSelect';
 
@@ -61,10 +61,10 @@ export const WithItemLinksAndActionsExample = (storyProps: WithItemLinksAndActio
     }) => {
         return (
             <a href="#" style={{textDecoration: 'none', color: 'inherit', width: '100%'}}>
-                <NormalizedListItemView
+                <UIKitListItemView
                     {...itemProps}
                     content={
-                        <NormalizedListItemViewContent
+                        <UIKitListItemViewContent
                             {...itemProps.content}
                             isGroup={false}
                             hasSelectionIcon={itemProps.selectionViewType === 'multiple'}
@@ -111,7 +111,7 @@ export const WithItemLinksAndActionsExample = (storyProps: WithItemLinksAndActio
                                         }
                                     >
                                         <Button.Icon>
-                                            <NormalizedListItemExpandIcon
+                                            <UIKitListItemExpandIcon
                                                 expanded={itemProps.content.expanded}
                                                 behavior="action"
                                             />

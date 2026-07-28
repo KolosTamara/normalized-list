@@ -1,13 +1,13 @@
 import type {NormalizedListRenderItem} from '../components/NormalizedList/types';
 import type {ListItemViewContentType} from '../components/useNormalizedList';
 
-import {NormalizedListItemExpandIcon} from './NormalizedListItemExpandIcon';
-import {NormalizedListItemView} from './NormalizedListItemView';
-import {NormalizedListItemViewContent} from './NormalizedListItemViewContent';
+import {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
+import {UIKitListItemView} from './UIKitListItemView';
+import {UIKitListItemViewContent} from './UIKitListItemViewContent';
 
 /**
  * Default UIKit list item renderer for NormalizedList / NormalizedSelect wrappers.
- * Passes structured `content` through themed NormalizedListItemView + NormalizedListItemViewContent.
+ * Passes structured `content` through themed UIKitListItemView + UIKitListItemViewContent.
  */
 export const renderUIKitListItem: NormalizedListRenderItem<unknown> = ({
     props: itemProps,
@@ -16,19 +16,19 @@ export const renderUIKitListItem: NormalizedListRenderItem<unknown> = ({
     const {content, selectionViewType, selected, disabled, ...shellProps} = itemProps;
 
     return (
-        <NormalizedListItemView
+        <UIKitListItemView
             {...shellProps}
             {...renderContainerProps}
             selected={selected}
             disabled={disabled}
             selectionViewType={selectionViewType}
             content={
-                <NormalizedListItemViewContent
+                <UIKitListItemViewContent
                     {...(content as ListItemViewContentType)}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
-                    renderExpandIcon={NormalizedListItemExpandIcon}
+                    renderExpandIcon={UIKitListItemExpandIcon}
                 />
             }
         />

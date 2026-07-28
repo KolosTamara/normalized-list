@@ -1,1 +1,0 @@
-export {NormalizedListItemView} from './NormalizedListItemView';

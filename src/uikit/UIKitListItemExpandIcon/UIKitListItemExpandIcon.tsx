@@ -3,13 +3,13 @@ import type {ArrowToggleProps} from '@gravity-ui/uikit';
 
 import type {ListItemExpandIconRenderProps} from '../../components/useNormalizedList';
 
-export interface NormalizedListItemExpandIconProps extends ListItemExpandIconRenderProps {}
+export interface UIKitListItemExpandIconProps extends ListItemExpandIconRenderProps {}
 
-export const NormalizedListItemExpandIcon = ({
+export const UIKitListItemExpandIcon = ({
     expanded,
     behavior = 'action',
     disabled,
-}: NormalizedListItemExpandIconProps) => {
+}: UIKitListItemExpandIconProps) => {
     return (
         <ArrowToggle
             direction={getIconDirection({behavior, expanded})}

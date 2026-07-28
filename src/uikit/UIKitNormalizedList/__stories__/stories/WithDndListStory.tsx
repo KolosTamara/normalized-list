@@ -23,9 +23,9 @@ import type {
 } from '../../../../components/NormalizedList/types';
 import type {UIKitNormalizedListProps as NormalizedListProps} from '../../../UIKitNormalizedList';
 import {
-    NormalizedListItemExpandIcon,
-    NormalizedListItemView,
-    NormalizedListItemViewContent,
+    UIKitListItemExpandIcon,
+    UIKitListItemView,
+    UIKitListItemViewContent,
 } from '../../../../uikit';
 
 type CustomDataType = {someRandomKey: string; id: string};
@@ -49,7 +49,7 @@ const DraggableListItem = ({
             : {title: content};
 
     return (
-        <NormalizedListItemView
+        <UIKitListItemView
             {...provided?.dragHandleProps}
             {...provided?.draggableProps}
             ref={provided?.innerRef}
@@ -59,12 +59,12 @@ const DraggableListItem = ({
             selectionViewType={selectionViewType}
             role="option"
             content={
-                <NormalizedListItemViewContent
+                <UIKitListItemViewContent
                     {...contentProps}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
-                    renderExpandIcon={NormalizedListItemExpandIcon}
+                    renderExpandIcon={UIKitListItemExpandIcon}
                 />
             }
         />

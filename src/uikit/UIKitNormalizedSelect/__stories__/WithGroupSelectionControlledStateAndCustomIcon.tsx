@@ -10,9 +10,9 @@ import type {
 } from '../../../components/useNormalizedList';
 import {createRandomizedData} from '../../../components/useNormalizedList/__stories__/utils/makeData';
 import type {NormalizedSelectRenderItem} from '../../../components/NormalizedSelect/types';
-import {NormalizedListItemExpandIcon} from '../../NormalizedListItemExpandIcon';
-import {NormalizedListItemView} from '../../NormalizedListItemView';
-import {NormalizedListItemViewContent} from '../../NormalizedListItemViewContent';
+import {UIKitListItemExpandIcon} from '../../UIKitListItemExpandIcon';
+import {UIKitListItemView} from '../../UIKitListItemView';
+import {UIKitListItemViewContent} from '../../UIKitListItemViewContent';
 import type {UIKitNormalizedSelectProps} from '../UIKitNormalizedSelect';
 import {UIKitNormalizedSelect} from '../UIKitNormalizedSelect';
 
@@ -86,11 +86,11 @@ export const WithGroupSelectionControlledStateAndCustomIconExample = ({
         const selectionViewType = storyProps.multiple ? 'multiple' : 'single';
 
         return (
-            <NormalizedListItemView
+            <UIKitListItemView
                 {...itemProps}
                 selectionViewType={selectionViewType}
                 content={
-                    <NormalizedListItemViewContent
+                    <UIKitListItemViewContent
                         {...itemProps.content}
                         isGroup={false}
                         hasSelectionIcon={selectionViewType === 'multiple'}
@@ -117,7 +117,7 @@ export const WithGroupSelectionControlledStateAndCustomIconExample = ({
                                     }
                                 >
                                     <Button.Icon>
-                                        <NormalizedListItemExpandIcon
+                                        <UIKitListItemExpandIcon
                                             expanded={itemProps.content.expanded}
                                             behavior="action"
                                         />

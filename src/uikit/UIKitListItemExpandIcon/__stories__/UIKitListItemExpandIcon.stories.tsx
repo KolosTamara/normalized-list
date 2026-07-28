@@ -1,13 +1,13 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
-import {NormalizedListItemExpandIcon} from '../NormalizedListItemExpandIcon';
+import {UIKitListItemExpandIcon} from '../UIKitListItemExpandIcon';
 
 export default {
-    title: 'Lab/UIKit/NormalizedListItemExpandIcon',
-    component: NormalizedListItemExpandIcon,
-} as Meta<typeof NormalizedListItemExpandIcon>;
+    title: 'Lab/UIKit/UIKitListItemExpandIcon',
+    component: UIKitListItemExpandIcon,
+} as Meta<typeof UIKitListItemExpandIcon>;
 
-type Story = StoryObj<typeof NormalizedListItemExpandIcon>;
+type Story = StoryObj<typeof UIKitListItemExpandIcon>;
 
 export const Expanded: Story = {
     args: {

@@ -4,11 +4,11 @@ import {ListItemView as HeadlessListItemView} from '../../components/useNormaliz
 import type {ListItemViewProps} from '../../components/useNormalizedList';
 import {block} from '../../components/utils/cn';
 
-import './NormalizedListItemView.scss';
+import './UIKitListItemView.scss';
 
 const b = block('list-item-view');
 
-export const NormalizedListItemView = React.forwardRef(function NormalizedListItemView(
+export const UIKitListItemView = React.forwardRef(function UIKitListItemView(
     {className, ...props}: ListItemViewProps,
     ref: React.ComponentPropsWithRef<typeof HeadlessListItemView>['ref'],
 ) {
