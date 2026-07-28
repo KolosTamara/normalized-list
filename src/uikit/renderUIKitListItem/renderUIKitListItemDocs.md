@@ -5,8 +5,8 @@ Default `renderItem` for [`UIKitNormalizedList`](/docs/lab-uikit-uikitnormalized
 ## Usage
 
 ```tsx
-import {NormalizedList} from '@gravity-ui/tree-select';
-import {renderUIKitListItem} from '@gravity-ui/tree-select/uikit';
+import {NormalizedList} from '@gravity-ui/normalized-list';
+import {renderUIKitListItem} from '@gravity-ui/normalized-list/uikit';
 
 <NormalizedList
   list={list}

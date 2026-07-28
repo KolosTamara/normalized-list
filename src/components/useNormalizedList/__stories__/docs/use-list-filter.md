@@ -3,7 +3,7 @@
 Ready-made filtration for tree-like item arrays. Prefer this before writing custom recursive filter logic.
 
 ```tsx
-import {useListFilter} from '@gravity-ui/tree-select';
+import {useListFilter} from '@gravity-ui/normalized-list';
 ```
 
 #### Props:
@@ -30,7 +30,7 @@ import {useListFilter} from '@gravity-ui/tree-select';
 #### Usage example:
 
 ```tsx
-import {useNormalizedList, useListFilter} from '@gravity-ui/tree-select';
+import {useNormalizedList, useListFilter} from '@gravity-ui/normalized-list';
 
 const List = () => {
   const {items, filter, onFilterUpdate, filterRef} = useListFilter({

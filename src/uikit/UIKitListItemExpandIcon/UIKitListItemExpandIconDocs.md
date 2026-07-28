@@ -7,7 +7,7 @@ Used as default `renderExpandIcon` inside `UIKitListItemViewContent` / `renderUI
 ## Usage
 
 ```tsx
-import {UIKitListItemExpandIcon} from '@gravity-ui/tree-select/uikit';
+import {UIKitListItemExpandIcon} from '@gravity-ui/normalized-list/uikit';
 
 <UIKitListItemExpandIcon expanded={expanded} behavior="state" />;
 ```

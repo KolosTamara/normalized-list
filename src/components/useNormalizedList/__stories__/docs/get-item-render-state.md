@@ -8,7 +8,7 @@ import {
   getItemRenderState,
   getListItemClickHandler,
   useNormalizedList,
-} from '@gravity-ui/tree-select';
+} from '@gravity-ui/normalized-list';
 
 const list = useNormalizedList({items});
 const onItemClick = getListItemClickHandler({list});
@@ -56,7 +56,7 @@ import {
   getItemRenderState,
   getListItemClickHandler,
   useNormalizedList,
-} from '@gravity-ui/tree-select';
+} from '@gravity-ui/normalized-list';
 
 const list = useNormalizedList({items});
 const onItemClick = getListItemClickHandler({list});

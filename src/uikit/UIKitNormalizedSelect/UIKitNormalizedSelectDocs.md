@@ -10,7 +10,7 @@ There are many usage patterns for this component — see the Storybook stories a
 
 ```tsx
 import {useState} from 'react';
-import {UIKitNormalizedSelect} from '@gravity-ui/tree-select/uikit';
+import {UIKitNormalizedSelect} from '@gravity-ui/normalized-list/uikit';
 
 export function Example() {
   const [value, setValue] = useState<string[]>([]);
@@ -68,7 +68,7 @@ UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/lab-uikit-uikitnormalized
 Gravity UI `Popup` wrapper implementing `NormalizedSelect`’s `renderPopup` contract (placement, width middlewares, `returnFocus` to the control).
 
 ```tsx
-import {UIKitNormalizedSelectPopup} from '@gravity-ui/tree-select/uikit';
+import {UIKitNormalizedSelectPopup} from '@gravity-ui/normalized-list/uikit';
 
 renderPopup={(props) => <UIKitNormalizedSelectPopup {...props} />}
 ```

@@ -9,7 +9,7 @@ For Gravity UI use [UIKitNormalizedList](/docs/lab-uikit-uikitnormalizedlist--do
 ## Basic example
 
 ```tsx
-import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/tree-select';
+import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
 
 const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
 
@@ -21,7 +21,7 @@ const list = useNormalizedList({items});
 ## Example with state
 
 ```tsx
-import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/tree-select';
+import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
 
 const items: ListItemType<{title: string}>[] = [
   {title: 'one'},

@@ -16,7 +16,11 @@ Keyboard support for tree/list containers (arrow up/down, Enter/Space).
 #### Usage example:
 
 ```tsx
-import {useNormalizedList, useListKeydown, getListItemClickHandler} from '@gravity-ui/tree-select';
+import {
+  useNormalizedList,
+  useListKeydown,
+  getListItemClickHandler,
+} from '@gravity-ui/normalized-list';
 
 const containerRef = React.useRef<HTMLDivElement>(null);
 const list = useNormalizedList({items});

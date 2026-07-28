@@ -26,7 +26,7 @@ import {
   getItemRenderState,
   getListItemClickHandler,
   useNormalizedList,
-} from '@gravity-ui/tree-select';
+} from '@gravity-ui/normalized-list';
 
 const items: ListItemType<string>[] = [
   {data: 'one'},

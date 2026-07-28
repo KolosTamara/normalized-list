@@ -2,12 +2,12 @@
 
 Structural row shell for tree/list items: size, selection, active/hover, disabled, dragging. Provided with neutral default visuals, theme or replace for production.
 
-For Gravity UI use theme wrapper: [UIKitListItemView](/docs/lab-uikit-uikitlistitemview--docs) from `@gravity-ui/tree-select/uikit`.
+For Gravity UI use theme wrapper: [UIKitListItemView](/docs/lab-uikit-uikitlistitemview--docs) from `@gravity-ui/normalized-list/uikit`.
 
 ## Basic usage
 
 ```tsx
-import {ListItemView} from '@gravity-ui/tree-select';
+import {ListItemView} from '@gravity-ui/normalized-list';
 
 <ListItemView
   id="item-1"

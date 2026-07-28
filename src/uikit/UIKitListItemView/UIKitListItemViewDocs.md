@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import {UIKitListItemView, UIKitListItemViewContent} from '@gravity-ui/tree-select/uikit';
+import {UIKitListItemView, UIKitListItemViewContent} from '@gravity-ui/normalized-list/uikit';
 
 <UIKitListItemView
   id={id}
@@ -22,7 +22,7 @@ Same props as core [`ListItemView`](/docs/lab-usenormalizedlist-listitemview--do
 Gravity UI content layout for a list row: title/subtitle (`Text`), selection check, expand control, start/end slots.
 
 ```tsx
-import {UIKitListItemViewContent, UIKitListItemExpandIcon} from '@gravity-ui/tree-select/uikit';
+import {UIKitListItemViewContent, UIKitListItemExpandIcon} from '@gravity-ui/normalized-list/uikit';
 
 <UIKitListItemViewContent
   title="Group"

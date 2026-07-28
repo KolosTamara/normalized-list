@@ -9,8 +9,8 @@ There are many usage patterns for this component — see the Storybook stories a
 ## Basic usage
 
 ```tsx
-import {useNormalizedList} from '@gravity-ui/tree-select';
-import {UIKitNormalizedList} from '@gravity-ui/tree-select/uikit';
+import {useNormalizedList} from '@gravity-ui/normalized-list';
+import {UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
 
 const list = useNormalizedList({items});
 

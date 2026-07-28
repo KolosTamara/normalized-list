@@ -1,21 +1,21 @@
-# @gravity-ui/tree-select
+# @gravity-ui/normalized-list
 
-Headless tree list and tree select primitives for React, plus an optional Gravity UI (`@gravity-ui/uikit`) presentation layer.
+Headless normalized list and select primitives for React (flat or tree items), plus an optional Gravity UI (`@gravity-ui/uikit`) presentation layer.
 
 ## Install
 
 ```bash
-npm install @gravity-ui/tree-select
+npm install @gravity-ui/normalized-list
 ```
 
 Peer dependencies: `react`, `react-dom`. For the UIKit layer also install `@gravity-ui/uikit` and `@gravity-ui/icons`.
 
 ## Package layout
 
-| Entry | Import                          | What you get                                                                        |
-| ----- | ------------------------------- | ----------------------------------------------------------------------------------- |
-| Core  | `@gravity-ui/tree-select`       | `NormalizedSelect`, `NormalizedList`, `useNormalizedList`, list building blocks     |
-| UIKit | `@gravity-ui/tree-select/uikit` | `UIKitNormalizedSelect`, `UIKitNormalizedList`, themed controls and list item views |
+| Entry | Import                              | What you get                                                                        |
+| ----- | ----------------------------------- | ----------------------------------------------------------------------------------- |
+| Core  | `@gravity-ui/normalized-list`       | `NormalizedSelect`, `NormalizedList`, `useNormalizedList`, list building blocks     |
+| UIKit | `@gravity-ui/normalized-list/uikit` | `UIKitNormalizedSelect`, `UIKitNormalizedList`, themed controls and list item views |
 
 Core ships **minimal fallback UI** when you do not pass render props. Prefer custom renderers or the UIKit entry for production.
 
@@ -24,8 +24,8 @@ Core ships **minimal fallback UI** when you do not pass render props. Prefer cus
 ### UIKit NormalizedList (recommended for Gravity UI apps)
 
 ```tsx
-import {useNormalizedList} from '@gravity-ui/tree-select';
-import {UIKitNormalizedList} from '@gravity-ui/tree-select/uikit';
+import {useNormalizedList} from '@gravity-ui/normalized-list';
+import {UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
 
 const items = [
   {
@@ -44,7 +44,7 @@ export function Example() {
 ### Core NormalizedList + `useNormalizedList`
 
 ```tsx
-import {NormalizedList, useNormalizedList} from '@gravity-ui/tree-select';
+import {NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
 
 const items = [{data: {title: 'One'}}, {data: {title: 'Two'}}];
 

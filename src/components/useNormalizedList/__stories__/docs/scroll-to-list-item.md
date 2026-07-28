@@ -7,7 +7,7 @@ Looks up `[data-list-item="${id}"]`.
 #### Usage example:
 
 ```tsx
-import {ListContainerView, scrollToListItem} from '@gravity-ui/tree-select';
+import {ListContainerView, scrollToListItem} from '@gravity-ui/normalized-list';
 
 const containerRef = React.useRef<HTMLDivElement>(null);
 

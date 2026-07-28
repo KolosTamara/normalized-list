@@ -3,7 +3,7 @@
 Default click behavior: activate item; toggle expand on groups; select (single or multi) on leaves.
 
 ```tsx
-import {getListItemClickHandler} from '@gravity-ui/tree-select';
+import {getListItemClickHandler} from '@gravity-ui/normalized-list';
 ```
 
 #### Props:

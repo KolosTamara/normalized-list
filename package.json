@@ -1,5 +1,5 @@
 {
-  "name": "@gravity-ui/tree-select",
+  "name": "@gravity-ui/normalized-list",
   "version": "0.0.1",
   "description": "",
   "license": "MIT",
@@ -37,12 +37,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gravity-ui/tree-select.git"
+    "url": "git+https://github.com/gravity-ui/normalized-list.git"
   },
   "bugs": {
-    "url": "https://github.com/gravity-ui/tree-select/issues"
+    "url": "https://github.com/gravity-ui/normalized-list/issues"
   },
-  "homepage": "https://github.com/gravity-ui/tree-select#readme",
+  "homepage": "https://github.com/gravity-ui/normalized-list#readme",
   "scripts": {
     "prepare": "husky",
     "lint:js": "eslint",

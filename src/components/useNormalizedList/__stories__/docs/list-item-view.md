@@ -3,13 +3,13 @@
 Structural row shell for list items. Full docs: [`ListItemView`](/docs/lab-usenormalizedlist-listitemview--docs).
 
 ```tsx
-import {ListItemView} from '@gravity-ui/tree-select';
+import {ListItemView} from '@gravity-ui/normalized-list';
 ```
 
 #### Usage example:
 
 ```tsx
-import {type ListItemType, ListItemView} from '@gravity-ui/tree-select';
+import {type ListItemType, ListItemView} from '@gravity-ui/normalized-list';
 
 type Entity = {title: string; subtitle: string; icon: React.ReactNode};
 

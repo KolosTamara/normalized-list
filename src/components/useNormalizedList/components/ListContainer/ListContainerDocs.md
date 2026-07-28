@@ -7,7 +7,7 @@ Default non-virtualized tree container for [NormalizedList](/docs/lab-normalized
 Used as the default `renderContainer`, or can be passed explicitly:
 
 ```tsx
-import {ListContainer, NormalizedList, useNormalizedList} from '@gravity-ui/tree-select';
+import {ListContainer, NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
 
 const list = useNormalizedList({items});
 
@@ -25,7 +25,7 @@ For production overrides (virtualization, DnD, empty states), use `renderContain
 Presentational listbox shell used inside `ListContainer` (and useful when you build a custom container yourself).
 
 ```tsx
-import {ListContainerView} from '@gravity-ui/tree-select';
+import {ListContainerView} from '@gravity-ui/normalized-list';
 
 <ListContainerView id="list-1" fixedHeight className="my-list">
   {children}

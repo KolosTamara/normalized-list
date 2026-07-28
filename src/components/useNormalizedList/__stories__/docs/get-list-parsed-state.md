@@ -5,7 +5,7 @@ Used under the hood of `useNormalizedList` to build `structure` and initial stat
 #### Usage example:
 
 ```tsx
-import {getListParsedState} from '@gravity-ui/tree-select';
+import {getListParsedState} from '@gravity-ui/normalized-list';
 
 const [expandedById, setExpanded] = React.useState(
   () => getListParsedState({items}).initialState.expandedById,

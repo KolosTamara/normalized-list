@@ -10,7 +10,7 @@ For Gravity UI use [UIKitNormalizedSelect](/docs/lab-uikit-uikitnormalizedselect
 
 ```tsx
 import {useState} from 'react';
-import {NormalizedSelect} from '@gravity-ui/tree-select';
+import {NormalizedSelect} from '@gravity-ui/normalized-list';
 
 const items = [
   {

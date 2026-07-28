@@ -5,7 +5,7 @@ Gravity UI–styled select control for `NormalizedSelect` / [`UIKitNormalizedSel
 ## Usage
 
 ```tsx
-import {UIKitNormalizedSelectControl, getSelectedOptionsContent} from '@gravity-ui/tree-select/uikit';
+import {UIKitNormalizedSelectControl, getSelectedOptionsContent} from '@gravity-ui/normalized-list/uikit';
 
 renderControl={(controlProps) => (
   <UIKitNormalizedSelectControl
