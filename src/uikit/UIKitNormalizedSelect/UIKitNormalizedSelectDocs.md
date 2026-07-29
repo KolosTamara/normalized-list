@@ -1,6 +1,6 @@
 # UIKitNormalizedSelect
 
-[`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with Gravity UI defaults for control, popup, list item ([`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs)), and outside error text.
+[`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with `@gravity-ui/uikit` defaults for control, popup, list item ([`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs)), and outside error text.
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
 
@@ -50,7 +50,7 @@ You can customize the same things as core [`NormalizedSelect`](/docs/normalized-
 />
 ```
 
-UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/normalized-list-uikit-uikitnormalizedselectcontrol--docs) and [`UIKitNormalizedSelectPopup`](#uikitnormalizedselectpopup).
+Defaults: [`UIKitNormalizedSelectControl`](#uikitnormalizedselectcontrol) and [`UIKitNormalizedSelectPopup`](#uikitnormalizedselectpopup).
 
 ### List item and container
 
@@ -63,17 +63,13 @@ UIKit defaults: [`UIKitNormalizedSelectControl`](/docs/normalized-list-uikit-uik
 />
 ```
 
+## `UIKitNormalizedSelectControl`
+
+Default `renderControl` for `UIKitNormalizedSelect`: select control styled for `@gravity-ui/uikit`.
+
 ## `UIKitNormalizedSelectPopup`
 
-Gravity UI `Popup` wrapper implementing `NormalizedSelect`’s `renderPopup` contract (placement, width middlewares, `returnFocus` to the control).
-
-```tsx
-import {UIKitNormalizedSelectPopup} from '@gravity-ui/normalized-list/uikit';
-
-renderPopup={(props) => <UIKitNormalizedSelectPopup {...props} />}
-```
-
-CSS block: `.g-nl-normalized-select-popup` with `max-height: 90vh` and flex column layout (list scrolls inside).
+Default `renderPopup` for `UIKitNormalizedSelect`: `@gravity-ui/uikit` `Popup` wrapper (placement, width middlewares, `returnFocus` to the control).
 
 ## `getItemId` and `value`
 

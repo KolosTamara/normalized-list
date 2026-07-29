@@ -4,9 +4,9 @@ The basic component for working with lists, including tree-like. You own list st
 
 It's supplied with a default UI for demos and exploration. For production, prefer supplying your own UI blocks — see [Customization](#customization).
 
-For Gravity UI use [UIKitNormalizedList](/docs/normalized-list-uikit-uikitnormalizedlist--docs).
+If you use `@gravity-ui/uikit`, prefer [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) from `@gravity-ui/normalized-list/uikit`.
 
-## Basic example
+## Basic example with Flat items
 
 ```tsx
 import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
@@ -16,6 +16,23 @@ const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
 const list = useNormalizedList({items});
 
 <NormalizedList list={list} mapItemDataToContentProps={(item) => ({title: item})} />;
+```
+
+## Basic example with Tree items
+
+```tsx
+import {type ListItemType, NormalizedList, useNormalizedList} from '@gravity-ui/normalized-list';
+
+const items: ListItemType<{title: string}>[] = [
+  {
+    data: {title: 'Fruits'},
+    children: [{data: {title: 'Apple'}}, {data: {title: 'Orange'}}],
+  },
+];
+
+const list = useNormalizedList({items, defaultExpandedState: 'expanded'});
+
+<NormalizedList list={list} multiple mapItemDataToContentProps={(item) => item} />;
 ```
 
 ## Example with state

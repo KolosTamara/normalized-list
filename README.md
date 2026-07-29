@@ -12,6 +12,8 @@ npm install @gravity-ui/normalized-list
 
 Peer dependencies: `react`, `react-dom`. For the UIKit layer also install `@gravity-ui/uikit` and `@gravity-ui/icons`.
 
+Migrating from `@gravity-ui/uikit/unstable` (`TreeSelect`, `TreeList`, `useList`)? See [MIGRATION.md](./MIGRATION.md).
+
 ## Idea
 
 ```text
@@ -109,7 +111,7 @@ export function Example() {
 
 ### 3. UIKit preset
 
-The uikit entry is a set of presets for the Gravity UI design system: themed defaults for list rows, select control, and popup. They address the “bring your own view” gap from [§2](#2-list-ui-on-top-of-the-hook) for that one case — you still can override via render props.
+The uikit entry is a set of presets for `@gravity-ui/uikit`: themed defaults for list rows, select control, and popup. They address the “bring your own view” gap from [§2](#2-list-ui-on-top-of-the-hook) for that one case — you still can override via render props.
 
 ```tsx
 import {useNormalizedList} from '@gravity-ui/normalized-list';
@@ -152,7 +154,7 @@ Override presentation without rewriting list logic:
 
 BEM roots and package CSS variables use the `g-nl-` prefix (for example `--g-nl-list-item-background-hover`).
 
-The UIKit entry maps those variables to Gravity UI tokens (`--g-color-*`, `--g-spacing-*`, …).
+The UIKit entry maps those variables to `@gravity-ui/uikit` tokens (`--g-color-*`, `--g-spacing-*`, …).
 
 ## Storybook
 

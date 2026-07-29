@@ -1,6 +1,6 @@
 # UIKitListItemView
 
-[ListItemView](/docs/normalized-list-usenormalizedlist-listitemview--docs) with Gravity UI theme modifier (`_theme-uikit`): maps `--g-nl-list-item-*` variables to `--g-color-*` tokens.
+[ListItemView](/docs/normalized-list-usenormalizedlist-listitemview--docs) with `@gravity-ui/uikit` theme modifier (`_theme-uikit`): maps `--g-nl-list-item-*` variables to `--g-color-*` tokens.
 
 ## Usage
 
@@ -19,7 +19,7 @@ Same props as core [`ListItemView`](/docs/normalized-list-usenormalizedlist-list
 
 ## `UIKitListItemViewContent`
 
-Gravity UI content layout for a list row: title/subtitle (`Text`), selection check, expand control, start/end slots.
+List row content layout for `@gravity-ui/uikit`: title/subtitle (`Text`), selection check, expand control, start/end slots.
 
 ```tsx
 import {UIKitListItemViewContent, UIKitListItemExpandIcon} from '@gravity-ui/normalized-list/uikit';

@@ -1,6 +1,6 @@
 # UIKitNormalizedList
 
-[`NormalizedList`](/docs/normalized-list-normalizedlist--docs) with default `renderItem` set to [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) (Gravity UI list row).
+[`NormalizedList`](/docs/normalized-list-normalizedlist--docs) with default `renderItem` set to [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) (list row themed for `@gravity-ui/uikit`).
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
 

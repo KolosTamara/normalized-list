@@ -4,15 +4,25 @@ The basic component for selecting from lists, including tree-like. Supports cont
 
 It's supplied with a default UI for demos and exploration. For production, prefer supplying your own UI blocks — see [Customization](#customization).
 
-For Gravity UI use [UIKitNormalizedSelect](/docs/normalized-list-uikit-uikitnormalizedselect--docs).
+If you use `@gravity-ui/uikit`, prefer [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs) from `@gravity-ui/normalized-list/uikit`.
 
-## Basic usage
+## Basic example with Flat items
+
+```tsx
+import {type ListItemType, NormalizedSelect} from '@gravity-ui/normalized-list';
+
+const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
+
+<NormalizedSelect items={items} mapItemDataToContentProps={(item) => ({title: item})} />;
+```
+
+## Basic example with Tree items
 
 ```tsx
 import {useState} from 'react';
-import {NormalizedSelect} from '@gravity-ui/normalized-list';
+import {type ListItemType, NormalizedSelect} from '@gravity-ui/normalized-list';
 
-const items = [
+const items: ListItemType<{title: string}>[] = [
   {
     data: {title: 'Fruits'},
     children: [{data: {title: 'Apple'}}, {data: {title: 'Orange'}}],

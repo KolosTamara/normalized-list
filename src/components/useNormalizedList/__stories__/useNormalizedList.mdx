@@ -17,26 +17,36 @@ import getListItemQa from './docs/get-list-item-qa.md?raw';
 
 # useNormalizedList
 
-A set of hooks and building blocks for creating list / tree list UIs.
+Core of `@gravity-ui/normalized-list`: hooks and view building blocks for list / tree UIs.
 
-The basic idea is that hooks take all the complex logic on themselves, and all you have to do is implement the "dumb" components of the view.
+### Normalized model
 
-[`NormalizedList`](/docs/normalized-list-normalizedlist--docs) and [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) are ready-made compositions built on these primitives — useful as references and as drop-in UI when they fit your needs.
+`useNormalizedList` takes items in either a **flat** or **tree** shape and returns one model:
 
-### Hooks:
+- **`structure`** — id-keyed data (`itemsById`), hierarchy meta, visible order (`visibleFlattenIds`), …
+- **`state`** — selection, expansion, focus (`selectedById`, `expandedById`, `activeItemId`, …) and setters
+
+Hooks own the complex logic; view components stay “dumb”.
+
+### Typical paths
+
+1. Pass `list` into [`NormalizedList`](/docs/normalized-list-normalizedlist--docs) / [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) (or `@gravity-ui/normalized-list/uikit` if you use `@gravity-ui/uikit`).
+2. Assemble your own UI from the primitives below — see [Quick code snippets](#quick-code-snippets).
+
+### Hooks
 
 - [useNormalizedList](#usenormalizedlist)
 - [useListKeydown](#uselistkeydown)
 - [useListFilter](#uselistfilter)
 
-### Components (view):
+### Components (view)
 
 - [ListItemView](#listitemview)
 - [ListContainer](/docs/normalized-list-usenormalizedlist-listcontainer--docs)
 - [ListContainerView](#listcontainerview)
 - [ListRecursiveRenderer](#listrecursiverenderer)
 
-### Utilities:
+### Utilities
 
 - [getListItemClickHandler](#getlistitemclickhandler)
 - [computeItemSize](#computeitemsize)
@@ -47,7 +57,9 @@ The basic idea is that hooks take all the complex logic on themselves, and all y
 
 ## Quick code snippets
 
-### Flatten items:
+Headless assembly from primitives (without `NormalizedList` / `NormalizedSelect`).
+
+### Flat items:
 
 ```tsx
 import * as React from 'react';
