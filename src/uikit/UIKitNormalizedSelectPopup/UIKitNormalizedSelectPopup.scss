@@ -1,0 +1,10 @@
+@use '../../components/variables';
+$ns: variables.$ns;
+
+$block: '.#{$ns}normalized-select-popup';
+
+#{$block} {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}

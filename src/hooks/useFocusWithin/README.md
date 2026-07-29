@@ -5,7 +5,7 @@
 <!--/GITHUB_BLOCK-->
 
 ```tsx
-import {useFocusWithin} from '@gravity-ui/tree-select';
+import {useFocusWithin} from '@gravity-ui/normalized-list';
 ```
 
 The `useFocusWithin` hook that handles focus events for the target and its descendants

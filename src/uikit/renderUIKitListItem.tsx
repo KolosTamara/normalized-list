@@ -1,34 +1,34 @@
-import type {TreeListRenderItem} from '../components/TreeList/types';
-import type {ListItemViewContentType} from '../components/useList';
+import type {NormalizedListRenderItem} from '../components/NormalizedList/types';
+import type {ListItemViewContentType} from '../components/useNormalizedList';
 
-import {TreeListItemExpandIcon} from './TreeListItemExpandIcon';
-import {TreeListItemView} from './TreeListItemView';
-import {TreeListItemViewContent} from './TreeListItemViewContent';
+import {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
+import {UIKitListItemView} from './UIKitListItemView';
+import {UIKitListItemViewContent} from './UIKitListItemViewContent';
 
 /**
- * Default UIKit list item renderer for TreeList / TreeSelect wrappers.
- * Passes structured `content` through themed TreeListItemView + TreeListItemViewContent.
+ * Default UIKit list item renderer for NormalizedList / NormalizedSelect wrappers.
+ * Passes structured `content` through themed UIKitListItemView + UIKitListItemViewContent.
  */
-export const renderUIKitListItem: TreeListRenderItem<unknown> = ({
+export const renderUIKitListItem: NormalizedListRenderItem<unknown> = ({
     props: itemProps,
     renderContainerProps,
 }) => {
     const {content, selectionViewType, selected, disabled, ...shellProps} = itemProps;
 
     return (
-        <TreeListItemView
+        <UIKitListItemView
             {...shellProps}
             {...renderContainerProps}
             selected={selected}
             disabled={disabled}
             selectionViewType={selectionViewType}
             content={
-                <TreeListItemViewContent
+                <UIKitListItemViewContent
                     {...(content as ListItemViewContentType)}
                     hasSelectionIcon={selectionViewType === 'multiple'}
                     selected={selected}
                     disabled={disabled}
-                    renderExpandIcon={TreeListItemExpandIcon}
+                    renderExpandIcon={UIKitListItemExpandIcon}
                 />
             }
         />

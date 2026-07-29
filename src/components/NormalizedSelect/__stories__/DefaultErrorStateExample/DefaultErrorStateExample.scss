@@ -1,0 +1,11 @@
+.normalized-select-error-state-example {
+    display: flex;
+    gap: 20px;
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 240px;
+    }
+}

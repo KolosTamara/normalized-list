@@ -1,3 +1,3 @@
-export * from './components/useList';
-export * from './components/TreeList';
-export * from './components/TreeSelect';
+export * from './components/useNormalizedList';
+export * from './components/NormalizedList';
+export * from './components/NormalizedSelect';

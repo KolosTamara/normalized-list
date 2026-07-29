@@ -1,9 +1,9 @@
 import type * as React from 'react';
 
-import type {TreeSelectRenderControlProps} from '../components/TreeSelect/types';
+import type {NormalizedSelectRenderControlProps} from '../components/NormalizedSelect/types';
 
 export function getSelectedOptionsContent<T>(
-    {list, value}: Pick<TreeSelectRenderControlProps<T>, 'list' | 'value'>,
+    {list, value}: Pick<NormalizedSelectRenderControlProps<T>, 'list' | 'value'>,
     mapItemDataToContentProps: (item: T) => {title?: React.ReactNode},
 ): string {
     return value
