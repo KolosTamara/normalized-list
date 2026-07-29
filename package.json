@@ -56,13 +56,13 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
+    "@bem-react/classname": "^1.7.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
-    "@bem-react/classname": "^1.7.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@faker-js/faker": "^9.8.0",
