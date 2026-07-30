@@ -10,7 +10,7 @@ UI components (`NormalizedList`, `NormalizedSelect`, and the optional UIKit laye
 npm install @gravity-ui/normalized-list
 ```
 
-Peer dependencies: `react`, `react-dom`. For the UIKit layer also install `@gravity-ui/uikit` and `@gravity-ui/icons`.
+Peer dependencies: `react`, `react-dom`. For `@gravity-ui/normalized-list/uikit` you need `@gravity-ui/uikit`, `@gravity-ui/icons`, and `@floating-ui/react`. Installing `@gravity-ui/uikit` is usually enough (it already depends on the other two). With strict package managers such as pnpm, install `@gravity-ui/icons` and `@floating-ui/react` explicitly if they do not resolve.
 
 Migrating from `@gravity-ui/uikit/unstable` (`TreeSelect`, `TreeList`, `useList`)? See [MIGRATION.md](./MIGRATION.md).
 

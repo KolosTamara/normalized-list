@@ -18,7 +18,7 @@ Install:
 npm install @gravity-ui/normalized-list
 ```
 
-Peers for the UIKit entry: `@gravity-ui/uikit`, `@gravity-ui/icons` (you likely already have them).
+Peers for the UIKit entry: `@gravity-ui/uikit`, `@gravity-ui/icons`, and `@floating-ui/react`. Installing `@gravity-ui/uikit` is usually enough (it already depends on the other two). With strict package managers such as pnpm, install `@gravity-ui/icons` and `@floating-ui/react` explicitly if they do not resolve.
 
 CSS namespace changed to `g-nl-` (for example `--g-nl-list-item-background-hover`). Update any overrides that targeted the old list classes / variables.
 
