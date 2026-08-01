@@ -129,6 +129,27 @@ const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
 
 Requires a `MobileProvider` (or equivalent) from `@gravity-ui/uikit` so `useMobile()` returns the correct value.
 
+### QA / `data-qa`
+
+The consumer `qa` prop still marks the **list** (`data-qa={qa}`), as in `TreeSelect`. It is also passed to the default control button.
+
+Fixed selectors for clear and popup use package constants (not UIKit `SelectQa`):
+
+| Element | UIKit `SelectQa` | `@gravity-ui/normalized-list`                          |
+| ------- | ---------------- | ------------------------------------------------------ |
+| Clear   | `select-clear`   | `normalized-select-clear` (`NormalizedSelectQa.CLEAR`) |
+| Popup   | `select-popup`   | `normalized-select-popup` (`NormalizedSelectQa.POPUP`) |
+
+```tsx
+import {NormalizedSelectQa} from '@gravity-ui/normalized-list';
+// or from '@gravity-ui/normalized-list/uikit'
+
+getByTestId(NormalizedSelectQa.CLEAR);
+getByTestId(NormalizedSelectQa.POPUP);
+```
+
+Update e2e that relied on `SelectQa.CLEAR` / `SelectQa.POPUP` for the select.
+
 ---
 
 ## `TreeList` → `UIKitNormalizedList`

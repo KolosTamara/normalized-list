@@ -5,6 +5,7 @@ import {createPortal} from 'react-dom';
 
 import {useLayoutEffect} from '../../../../../hooks';
 import {block} from '../../../../utils/cn';
+import {NormalizedSelectQa} from '../../../constants';
 import type {
     NormalizedSelectPopupPlacement,
     NormalizedSelectPopupProps,
@@ -152,6 +153,7 @@ export const FallbackNormalizedSelectPopup = ({
             className={b(null, className)}
             style={style}
             role="presentation"
+            data-qa={NormalizedSelectQa.POPUP}
         >
             {children}
         </div>

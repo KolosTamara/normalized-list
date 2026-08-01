@@ -181,8 +181,10 @@ export const NormalizedSelect = React.forwardRef(function NormalizedSelect<T, P 
         value,
         disabled,
         id: normalizedSelectId,
+        popupId,
         activeItemId: list.state.activeItemId,
         title,
+        qa,
         errorMessage: isErrorIconVisible ? errorMessage : undefined,
         errorPlacement,
         validationState,
@@ -203,7 +205,6 @@ export const NormalizedSelect = React.forwardRef(function NormalizedSelect<T, P 
                 )
                 .filter(Boolean)
                 .join(', ')}
-            popupId={popupId}
         />
     );
 

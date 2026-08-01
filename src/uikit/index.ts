@@ -1,3 +1,4 @@
+export {NormalizedSelectQa} from '../components/NormalizedSelect/constants';
 export {UIKitNormalizedSelectControl} from './UIKitNormalizedSelectControl';
 export type {UIKitNormalizedSelectControlProps} from './UIKitNormalizedSelectControl';
 export {UIKitNormalizedSelectClear} from './UIKitNormalizedSelectClear';
