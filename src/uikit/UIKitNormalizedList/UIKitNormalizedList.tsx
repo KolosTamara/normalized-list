@@ -6,7 +6,7 @@ import type {
     NormalizedListRenderItem,
 } from '../../components/NormalizedList/types';
 
-import {defaultUIKitRenderItem} from '../defaultUIKitRenderItem';
+import {defaultUIKitRenderItem} from '../UIKitListItemView/defaultUIKitRenderItem';
 
 export type UIKitNormalizedListProps<T, P extends {} = {}> = NormalizedListProps<T, P>;
 

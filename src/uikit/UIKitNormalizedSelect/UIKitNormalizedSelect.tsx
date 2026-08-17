@@ -13,8 +13,8 @@ import type {
     NormalizedSelectRenderPopupProps,
 } from '../../components/NormalizedSelect/types';
 
-import {defaultUIKitRenderItem} from '../defaultUIKitRenderItem';
-import {getSelectedOptionsContent} from '../getSelectedOptionsContent';
+import {defaultUIKitRenderItem} from '../UIKitListItemView/defaultUIKitRenderItem';
+import {getSelectedOptionsContent} from './getSelectedOptionsContent';
 import {UIKitNormalizedSelectControl} from '../UIKitNormalizedSelectControl';
 import {UIKitNormalizedSelectPopup} from '../UIKitNormalizedSelectPopup';
 

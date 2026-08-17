@@ -5,7 +5,6 @@ export {UIKitNormalizedSelectClear} from './UIKitNormalizedSelectClear';
 export type {UIKitNormalizedSelectClearProps} from './UIKitNormalizedSelectClear';
 export {UIKitNormalizedSelectPopup} from './UIKitNormalizedSelectPopup';
 export type {UIKitNormalizedSelectPopupProps} from './UIKitNormalizedSelectPopup';
-export {getSelectedOptionsContent} from './getSelectedOptionsContent';
 export {UIKitListItemView} from './UIKitListItemView';
 export {UIKitListItemViewContent} from './UIKitListItemViewContent';
 export type {UIKitListItemViewContentProps} from './UIKitListItemViewContent';

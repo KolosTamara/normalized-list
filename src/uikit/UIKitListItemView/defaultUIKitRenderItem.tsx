@@ -1,4 +1,4 @@
-import type {NormalizedListRenderItem} from '../components/NormalizedList/types';
+import type {NormalizedListRenderItem} from '../../components/NormalizedList/types';
 
 import {UIKitListItemView} from './UIKitListItemView';
 

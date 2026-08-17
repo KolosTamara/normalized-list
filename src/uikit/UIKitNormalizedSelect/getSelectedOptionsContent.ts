@@ -1,6 +1,6 @@
 import type * as React from 'react';
 
-import type {NormalizedSelectRenderControlProps} from '../components/NormalizedSelect/types';
+import type {NormalizedSelectRenderControlProps} from '../../components/NormalizedSelect/types';
 
 export function getSelectedOptionsContent<T>(
     {list, value}: Pick<NormalizedSelectRenderControlProps<T>, 'list' | 'value'>,
