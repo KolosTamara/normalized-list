@@ -1,18 +1,21 @@
 import * as React from 'react';
 
 import {LIST_ITEM_DATA_ATR, modToHeight} from '../../constants';
-import type {ListItemViewProps} from '../../types';
+import type {ListItemViewContentType, ListItemViewProps} from '../../types';
 
-import {
-    FallbackListItemViewContent,
-    isListItemContentPropsGuard,
-} from '../fallback/FallbackListItemViewContent';
+import {FallbackListItemViewContent} from '../fallback/FallbackListItemViewContent';
 import {b} from './styles';
 
 type ListItemViewRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
 
 type ListItemViewPropsWithTypedAttrs<T extends React.ElementType> = ListItemViewProps<T> &
     Omit<React.ComponentPropsWithoutRef<T>, keyof ListItemViewProps<T>>;
+
+export const isListItemContentPropsGuard = (
+    props: ListItemViewContentType | React.ReactNode,
+): props is ListItemViewContentType => {
+    return typeof props === 'object' && props !== null && 'title' in props;
+};
 
 export const ListItemView = React.forwardRef(function ListItemView<
     T extends React.ElementType = 'li',

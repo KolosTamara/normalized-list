@@ -1,1 +1,1 @@
-export {ListItemView} from './ListItemView';
+export {ListItemView, isListItemContentPropsGuard} from './ListItemView';

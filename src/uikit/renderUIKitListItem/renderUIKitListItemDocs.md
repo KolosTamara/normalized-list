@@ -1,6 +1,6 @@
 # renderUIKitListItem
 
-Default `renderItem` for [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs): composes [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs) + [`UIKitListItemViewContent`](/docs/normalized-list-uikit-uikitlistitemview--docs#uikitlistitemviewcontent) + [`UIKitListItemExpandIcon`](/docs/normalized-list-uikit-uikitlistitemexpandicon--docs).
+Default `renderItem` for [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs): renders [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs), which maps structured `content` to [`UIKitListItemViewContent`](/docs/normalized-list-uikit-uikitlistitemview--docs#uikitlistitemviewcontent).
 
 ## Usage
 
