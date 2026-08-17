@@ -2,7 +2,7 @@
 
 Expand/collapse control for tree groups, built with `@gravity-ui/uikit` `ArrowToggle`.
 
-Used as default `renderExpandIcon` inside [`UIKitListItemViewContent`](/docs/normalized-list-uikit-uikitlistitemview--docs#uikitlistitemviewcontent) / [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs).
+Used as default `renderExpandIcon` inside [`UIKitListItemViewContent`](/docs/normalized-list-uikit-uikitlistitemview--docs#uikitlistitemviewcontent).
 
 ## Usage
 

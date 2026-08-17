@@ -17,7 +17,7 @@ import {UIKitListItemView} from '@gravity-ui/normalized-list/uikit';
 
 Object `content` is rendered with [`UIKitListItemViewContent`](#uikitlistitemviewcontent) (not the core fallback). Pass a React node as `content` to fully customize the row body.
 
-Same props as core [`ListItemView`](/docs/normalized-list-usenormalizedlist-listitemview--docs). Prefer [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) / [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) unless you need a custom composition.
+Same props as core [`ListItemView`](/docs/normalized-list-usenormalizedlist-listitemview--docs). Prefer [`UIKitNormalizedList`](/docs/normalized-list-uikit-uikitnormalizedlist--docs) / [`UIKitNormalizedSelect`](/docs/normalized-list-uikit-uikitnormalizedselect--docs) for the default wiring, or use this component directly in a custom `renderItem`.
 
 ## `UIKitListItemViewContent`
 
@@ -39,4 +39,4 @@ import {UIKitListItemViewContent, UIKitListItemExpandIcon} from '@gravity-ui/nor
 />;
 ```
 
-Use explicitly as a React `content` node when you need extra props/slots, or pass a content object to `UIKitListItemView` / [`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs) and it will be wired automatically.
+Use explicitly as a React `content` node when you need extra props/slots, or pass a content object to `UIKitListItemView` and it will be wired automatically.

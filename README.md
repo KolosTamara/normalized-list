@@ -137,7 +137,7 @@ Override presentation without rewriting list logic:
 
 - **`NormalizedList` / `NormalizedSelect`**: `renderItem`, `renderContainer`
 - **`NormalizedSelect`**: also `renderControl`, `renderPopup`, `renderError`, slots `slotBeforeListBody` / `slotAfterListBody`
-- **UIKit**: swap defaults (`renderUIKitListItem`, `UIKitNormalizedSelectControl`, …) the same way
+- **UIKit**: swap defaults (`UIKitListItemView` in `renderItem`, `UIKitNormalizedSelectControl`, …) the same way
 
 ```tsx
 <NormalizedList

@@ -13,8 +13,8 @@ import type {
     NormalizedSelectRenderPopupProps,
 } from '../../components/NormalizedSelect/types';
 
+import {defaultUIKitRenderItem} from '../defaultUIKitRenderItem';
 import {getSelectedOptionsContent} from '../getSelectedOptionsContent';
-import {renderUIKitListItem} from '../renderUIKitListItem';
 import {UIKitNormalizedSelectControl} from '../UIKitNormalizedSelectControl';
 import {UIKitNormalizedSelectPopup} from '../UIKitNormalizedSelectPopup';
 
@@ -30,7 +30,7 @@ export const UIKitNormalizedSelect = React.forwardRef(function UIKitNormalizedSe
 >(
     {
         mapItemDataToContentProps,
-        renderItem = renderUIKitListItem as NormalizedSelectRenderItem<T, P>,
+        renderItem = defaultUIKitRenderItem as NormalizedSelectRenderItem<T, P>,
         renderControl: propsRenderControl,
         renderPopup: propsRenderPopup,
         renderError: propsRenderError,

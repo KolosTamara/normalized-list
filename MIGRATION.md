@@ -203,17 +203,17 @@ const list = useNormalizedList({items, defaultExpandedState: 'expanded'});
 <UIKitNormalizedList list={list} multiple mapItemDataToContentProps={(item) => item} />;
 ```
 
-`renderItem` / `renderContainer` / `onItemClick` keep the same roles as on `TreeList`. To keep the UIKit row while adding chrome (links, actions), wrap `renderUIKitListItem`:
+`renderItem` / `renderContainer` / `onItemClick` keep the same roles as on `TreeList`. To keep the UIKit row while adding chrome (links, actions), use [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs) in a custom `renderItem`:
 
 ```tsx
-import {renderUIKitListItem, UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
+import {UIKitListItemView, UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
 
 <UIKitNormalizedList
   list={list}
   mapItemDataToContentProps={(item) => item}
-  renderItem={(args) => {
+  renderItem={({props, renderContainerProps}) => {
     // e.g. wrap in a link, add actions, …
-    return renderUIKitListItem(args);
+    return <UIKitListItemView {...props} {...renderContainerProps} />;
   }}
 />;
 ```

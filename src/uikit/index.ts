@@ -11,7 +11,6 @@ export {UIKitListItemViewContent} from './UIKitListItemViewContent';
 export type {UIKitListItemViewContentProps} from './UIKitListItemViewContent';
 export {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
 export type {UIKitListItemExpandIconProps} from './UIKitListItemExpandIcon';
-export {renderUIKitListItem} from './renderUIKitListItem';
 export {UIKitNormalizedList} from './UIKitNormalizedList';
 export type {UIKitNormalizedListProps} from './UIKitNormalizedList';
 export {UIKitNormalizedSelect} from './UIKitNormalizedSelect';

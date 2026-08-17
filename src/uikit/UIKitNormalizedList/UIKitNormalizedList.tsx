@@ -6,7 +6,7 @@ import type {
     NormalizedListRenderItem,
 } from '../../components/NormalizedList/types';
 
-import {renderUIKitListItem} from '../renderUIKitListItem';
+import {defaultUIKitRenderItem} from '../defaultUIKitRenderItem';
 
 export type UIKitNormalizedListProps<T, P extends {} = {}> = NormalizedListProps<T, P>;
 
@@ -15,7 +15,7 @@ export type UIKitNormalizedListProps<T, P extends {} = {}> = NormalizedListProps
  * Pass `renderItem` to override.
  */
 export const UIKitNormalizedList = <T, P extends {} = {}>({
-    renderItem = renderUIKitListItem as NormalizedListRenderItem<T, P>,
+    renderItem = defaultUIKitRenderItem as NormalizedListRenderItem<T, P>,
     ...props
 }: UIKitNormalizedListProps<T, P>) => {
     return <NormalizedList {...props} renderItem={renderItem} />;
