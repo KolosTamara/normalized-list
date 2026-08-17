@@ -18,7 +18,7 @@ Install:
 npm install @gravity-ui/normalized-list
 ```
 
-Peers for the UIKit entry: `@gravity-ui/uikit`, `@gravity-ui/icons` (you likely already have them).
+Peers for the UIKit entry: `@gravity-ui/uikit`, `@gravity-ui/icons`, and `@floating-ui/react`. Installing `@gravity-ui/uikit` is usually enough (it already depends on the other two). With strict package managers such as pnpm, install `@gravity-ui/icons` and `@floating-ui/react` explicitly if they do not resolve.
 
 CSS namespace changed to `g-nl-` (for example `--g-nl-list-item-background-hover`). Update any overrides that targeted the old list classes / variables.
 
@@ -129,6 +129,27 @@ const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
 
 Requires a `MobileProvider` (or equivalent) from `@gravity-ui/uikit` so `useMobile()` returns the correct value.
 
+### QA / `data-qa`
+
+The consumer `qa` prop still marks the **list** (`data-qa={qa}`), as in `TreeSelect`. It is also passed to the default control button.
+
+Fixed selectors for clear and popup use package constants (not UIKit `SelectQa`):
+
+| Element | UIKit `SelectQa` | `@gravity-ui/normalized-list`                          |
+| ------- | ---------------- | ------------------------------------------------------ |
+| Clear   | `select-clear`   | `normalized-select-clear` (`NormalizedSelectQa.CLEAR`) |
+| Popup   | `select-popup`   | `normalized-select-popup` (`NormalizedSelectQa.POPUP`) |
+
+```tsx
+import {NormalizedSelectQa} from '@gravity-ui/normalized-list';
+// or from '@gravity-ui/normalized-list/uikit'
+
+getByTestId(NormalizedSelectQa.CLEAR);
+getByTestId(NormalizedSelectQa.POPUP);
+```
+
+Update e2e that relied on `SelectQa.CLEAR` / `SelectQa.POPUP` for the select.
+
 ---
 
 ## `TreeList` → `UIKitNormalizedList`
@@ -182,17 +203,17 @@ const list = useNormalizedList({items, defaultExpandedState: 'expanded'});
 <UIKitNormalizedList list={list} multiple mapItemDataToContentProps={(item) => item} />;
 ```
 
-`renderItem` / `renderContainer` / `onItemClick` keep the same roles as on `TreeList`. To keep the UIKit row while adding chrome (links, actions), wrap `renderUIKitListItem`:
+`renderItem` / `renderContainer` / `onItemClick` keep the same roles as on `TreeList`. To keep the UIKit row while adding chrome (links, actions), use [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs) in a custom `renderItem`:
 
 ```tsx
-import {renderUIKitListItem, UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
+import {UIKitListItemView, UIKitNormalizedList} from '@gravity-ui/normalized-list/uikit';
 
 <UIKitNormalizedList
   list={list}
   mapItemDataToContentProps={(item) => item}
-  renderItem={(args) => {
+  renderItem={({props, renderContainerProps}) => {
     // e.g. wrap in a link, add actions, …
-    return renderUIKitListItem(args);
+    return <UIKitListItemView {...props} {...renderContainerProps} />;
   }}
 />;
 ```

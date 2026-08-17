@@ -1,6 +1,6 @@
 # UIKitNormalizedSelect
 
-[`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with `@gravity-ui/uikit` defaults for control, popup, list item ([`renderUIKitListItem`](/docs/normalized-list-uikit-renderuikitlistitem--docs)), and outside error text.
+[`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with `@gravity-ui/uikit` defaults for control, popup, list item ([`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs)), and outside error text.
 
 Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
 

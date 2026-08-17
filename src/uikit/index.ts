@@ -1,16 +1,15 @@
+export {NormalizedSelectQa} from '../components/NormalizedSelect/constants';
 export {UIKitNormalizedSelectControl} from './UIKitNormalizedSelectControl';
 export type {UIKitNormalizedSelectControlProps} from './UIKitNormalizedSelectControl';
 export {UIKitNormalizedSelectClear} from './UIKitNormalizedSelectClear';
 export type {UIKitNormalizedSelectClearProps} from './UIKitNormalizedSelectClear';
 export {UIKitNormalizedSelectPopup} from './UIKitNormalizedSelectPopup';
 export type {UIKitNormalizedSelectPopupProps} from './UIKitNormalizedSelectPopup';
-export {getSelectedOptionsContent} from './getSelectedOptionsContent';
 export {UIKitListItemView} from './UIKitListItemView';
 export {UIKitListItemViewContent} from './UIKitListItemViewContent';
 export type {UIKitListItemViewContentProps} from './UIKitListItemViewContent';
 export {UIKitListItemExpandIcon} from './UIKitListItemExpandIcon';
 export type {UIKitListItemExpandIconProps} from './UIKitListItemExpandIcon';
-export {renderUIKitListItem} from './renderUIKitListItem';
 export {UIKitNormalizedList} from './UIKitNormalizedList';
 export type {UIKitNormalizedListProps} from './UIKitNormalizedList';
 export {UIKitNormalizedSelect} from './UIKitNormalizedSelect';

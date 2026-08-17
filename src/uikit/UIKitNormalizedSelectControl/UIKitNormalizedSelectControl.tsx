@@ -35,9 +35,11 @@ export const UIKitNormalizedSelectControl = React.forwardRef(function UIKitNorma
         selectedOptionsContent,
         size = 'm',
         id,
+        popupId,
         placeholder,
         disabled,
         title,
+        qa,
         hasClear,
         errorMessage,
         isErrorVisible,
@@ -90,9 +92,11 @@ export const UIKitNormalizedSelectControl = React.forwardRef(function UIKitNorma
                     error: Boolean(isErrorVisible),
                 })}
                 id={id}
+                data-qa={qa}
                 title={title}
                 disabled={disabled}
                 role="combobox"
+                aria-controls={open ? popupId : undefined}
                 aria-haspopup="listbox"
                 aria-expanded={open}
                 aria-invalid={isErrorVisible || undefined}

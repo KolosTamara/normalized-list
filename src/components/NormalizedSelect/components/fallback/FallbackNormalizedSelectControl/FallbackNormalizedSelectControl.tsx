@@ -3,6 +3,7 @@
 import * as React from 'react';
 
 import {block} from '../../../../utils/cn';
+import {NormalizedSelectQa} from '../../../constants';
 import type {NormalizedSelectRenderControlProps} from '../../../types';
 
 import './FallbackNormalizedSelectControl.scss';
@@ -14,9 +15,7 @@ export type FallbackNormalizedSelectControlProps = Omit<
     'ref'
 > & {
     selectedOptionsContent: React.ReactNode;
-    popupId: string;
     className?: string;
-    qa?: string;
 };
 
 const ChevronIcon = () => (
@@ -122,6 +121,7 @@ export const FallbackNormalizedSelectControl = React.forwardRef<
                     type="button"
                     className={b('clear')}
                     aria-label="Clear"
+                    data-qa={NormalizedSelectQa.CLEAR}
                     disabled={disabled}
                     onClick={handleClearClick}
                 >

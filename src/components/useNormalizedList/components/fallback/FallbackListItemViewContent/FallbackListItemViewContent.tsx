@@ -8,12 +8,6 @@ import './FallbackListItemViewContent.scss';
 
 const b = block('fallback-list-item-view-content');
 
-export const isListItemContentPropsGuard = (
-    props: ListItemViewContentType | React.ReactNode,
-): props is ListItemViewContentType => {
-    return typeof props === 'object' && props !== null && 'title' in props;
-};
-
 interface SlotProps extends React.HTMLAttributes<HTMLDivElement> {
     indentation?: number;
 }

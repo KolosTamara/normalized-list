@@ -2,6 +2,7 @@
 
 import {Popup} from '@gravity-ui/uikit';
 
+import {NormalizedSelectQa} from '../../components/NormalizedSelect/constants';
 import type {
     NormalizedSelectPopupPlacement,
     NormalizedSelectRenderPopupProps,
@@ -38,6 +39,7 @@ export const UIKitNormalizedSelectPopup = ({
     return (
         <Popup
             className={b(null, className)}
+            qa={NormalizedSelectQa.POPUP}
             anchorRef={anchorRef}
             placement={placement}
             open={open}

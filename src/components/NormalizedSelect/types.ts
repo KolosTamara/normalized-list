@@ -29,7 +29,7 @@ export type NormalizedSelectPopupWidth = 'fit' | number;
 export interface NormalizedSelectPopupProps {
     open?: boolean;
     onClose: () => void;
-    anchorRef: React.RefObject<HTMLElement | null>;
+    anchorRef: React.RefObject<HTMLElement>;
     children?: React.ReactNode;
     className?: string;
     id?: string;
@@ -49,8 +49,10 @@ export type NormalizedSelectRenderControlProps<T> = {
     size: ListItemSize;
     value: ListItemId[];
     id: string;
+    popupId: string;
     activeItemId?: ListItemId;
     title?: string;
+    qa?: string;
     hasClear?: boolean;
     /**
      * Determines content of the error message
@@ -72,7 +74,7 @@ export type NormalizedSelectRenderControlProps<T> = {
  * for custom popup implementations (e.g. returnFocus).
  */
 export type NormalizedSelectRenderPopupProps = NormalizedSelectPopupProps & {
-    controlRef: React.RefObject<HTMLElement | null>;
+    controlRef: React.RefObject<HTMLElement>;
 };
 
 /**
